@@ -5,7 +5,11 @@ const pug = require('pug');
 const extract = require('extract-md-data');
 const config = require('../../config');
 const package = require('../../package.json');
-const { mkdirIfNotExistsSync, copySync } = require('../lib/files');
+const {
+  mkdirIfNotExistsSync,
+  copySync,
+  clearDirSync
+} = require('../lib/files');
 
 console.log('Starting build...');
 
@@ -15,21 +19,23 @@ const staticDir = path.resolve(__dirname, '..', '..', config.staticDir);
 
 const data = extract(contentDir, contentDir, { omitContent: true }); // TODO: update lib to deafult to single path source
 
-console.log({ data });
-
 // Build dirs
 console.log('Building blog dir...');
+
+mkdirIfNotExistsSync(distDir);
+clearDirSync(distDir);
 mkdirIfNotExistsSync(path.resolve(distDir, 'blog'));
+mkdirIfNotExistsSync(path.resolve(distDir, 'blog/p'));
 
 // Build homepage
 
 console.log('Building 404 page...');
-const notfoundPageHtml = pug.renderFile(
+const notfoundHtml = pug.renderFile(
   path.resolve(__dirname, 'templates', 'pages', '404.pug')
 );
 
 console.log('Building home page...');
-const homepageHtml = pug.renderFile(
+const homeHtml = pug.renderFile(
   path.resolve(__dirname, 'templates', 'pages', 'home.pug')
 );
 
@@ -47,18 +53,25 @@ const blogPostPages = blogPostsData.map((bp) => {
   return { html, slug: bp.slug };
 });
 
+console.log('Building blog home page...');
+const blogHomeHtml = pug.renderFile(
+  path.resolve(__dirname, 'templates', 'pages', 'blogHome.pug')
+);
+
 // Write files
 const filemap = {
-  'index.html': homepageHtml,
-  '404.html': notfoundPageHtml
+  'index.html': homeHtml,
+  '404.html': notfoundHtml,
+  'blog/index.html': blogHomeHtml
 };
 
 blogPostPages.forEach((bp) => {
-  const file = `blog/${bp.slug}.html`;
+  const file = `blog/p/${bp.slug}.html`;
   filemap[file] = bp.html;
 });
 
 const builtPages = Object.keys(filemap);
+
 console.log(
   `Built ${builtPages.length} pages: `,
   util.inspect(builtPages, { maxArrayLength: 10 })

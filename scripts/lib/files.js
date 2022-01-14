@@ -11,8 +11,9 @@ function copySync(srcDir, destDir, opts) {
 }
 
 function rmDirSync(dirPath) {
+  let files;
   try {
-    const files = fs.readdirSync(dirPath);
+    files = fs.readdirSync(dirPath);
   } catch (e) {
     return;
   }
