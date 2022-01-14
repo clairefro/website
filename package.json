@@ -6,7 +6,8 @@
   "author": "Claire Froelich",
   "license": "MIT",
   "scripts": {
-    "build": "node scripts/build/index.js"
+    "build": "node scripts/build/index.js",
+    "format": "prettier --write \"**/*.pug\""
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^1.19.1",
