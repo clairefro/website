@@ -5,8 +5,12 @@
   "main": "index.js",
   "author": "Claire Froelich",
   "license": "MIT",
+  "config": {
+    "distDir": "dist"
+  },
   "scripts": {
     "build": "node scripts/build/index.js",
+    "dev": "http-server $npm_package_config_distDir -o -p 1337",
     "format": "prettier --write ."
   },
   "devDependencies": {

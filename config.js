@@ -1,6 +1,7 @@
 require('dotenv').config();
 
+/** Note, output dir is specifed in apckage.json.config */
 module.exports = {
-  outDir: 'dist',
-  contentDir: 'content' // where the markdown lives
+  contentDir: 'content', // where the markdown lives
+  staticDir: 'public'
 };
