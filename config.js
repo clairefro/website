@@ -1,6 +1,6 @@
-require("dotenv").config();
+require('dotenv').config();
 
 module.exports = {
-  outDir: "dist",
-  contentDir: "content", // where the markdown lives
+  outDir: 'dist',
+  contentDir: 'content' // where the markdown lives
 };

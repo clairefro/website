@@ -1,10 +1,10 @@
-const extract = require("extract-md-data");
-const path = require("path");
-const config = require("../../config");
+const extract = require('extract-md-data');
+const path = require('path');
+const config = require('../../config');
 
-console.log("Starting build...");
+console.log('Starting build...');
 
-const contentDir = path.resolve(__dirname, "..", "..", config.contentDir);
+const contentDir = path.resolve(__dirname, '..', '..', config.contentDir);
 
 const data = extract(contentDir, contentDir, { omitContent: true }); // TODO: update lib to deafult to single path source
 

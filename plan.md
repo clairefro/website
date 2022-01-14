@@ -1,5 +1,6 @@
-# pages 
+# pages
+
 - home
 - blog (home/post pages)
-- projects 
+- projects
 - about me

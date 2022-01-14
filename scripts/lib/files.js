@@ -1,4 +1,4 @@
-const fs = require("fs-extra");
+const fs = require('fs-extra');
 
 function mkdirIfNotExistsSync(dir) {
   if (!fs.existsSync(dir)) {
@@ -18,7 +18,7 @@ function rmDirSync(dirPath) {
   }
   if (files.length > 0)
     for (var i = 0; i < files.length; i++) {
-      const filePath = dirPath + "/" + files[i];
+      const filePath = dirPath + '/' + files[i];
       if (fs.statSync(filePath).isFile()) fs.unlinkSync(filePath);
       else rmDirSync(filePath);
     }
@@ -34,5 +34,5 @@ module.exports = {
   mkdirIfNotExistsSync,
   copySync,
   rmDirSync,
-  clearDirSync,
+  clearDirSync
 };

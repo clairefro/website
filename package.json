@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "node scripts/build/index.js",
-    "format": "prettier --write \"**/*.pug\""
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^1.19.1",
