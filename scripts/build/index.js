@@ -40,34 +40,36 @@ const homeHtml = pug.renderFile(
 );
 
 // TODO: Build project page
-// Build blog pages
-const blogPostsData = data.filter((d) => d.relativeDir.match(/^blog\//));
 
-const blogPostPages = blogPostsData.map((bp) => {
+// Build blog pages
+const postsData = data.filter((d) => d.relativeDir.match(/^blog\//));
+
+const postPages = postsData.map((p) => {
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
-      post: bp
+      post: p
     }
   );
-  return { html, slug: bp.slug };
+  return { html, slug: p.slug };
 });
 
 console.log('Building blog home page...');
-const blogHomeHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', 'blogHome.pug')
+const blogHtml = pug.renderFile(
+  path.resolve(__dirname, 'templates', 'pages', 'blog.pug')
 );
 
 // Write files
 const filemap = {
   'index.html': homeHtml,
   '404.html': notfoundHtml,
-  'blog/index.html': blogHomeHtml
+  'blog/index.html': blogHtml
 };
 
-blogPostPages.forEach((bp) => {
-  const file = `blog/p/${bp.slug}.html`;
-  filemap[file] = bp.html;
+console.log(`Building ${postPages.length} blog post pages...`);
+postPages.forEach((p) => {
+  const file = `blog/p/${p.slug}.html`;
+  filemap[file] = p.html;
 });
 
 const builtPages = Object.keys(filemap);
