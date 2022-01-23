@@ -39,24 +39,60 @@ const homeHtml = pug.renderFile(
   path.resolve(__dirname, 'templates', 'pages', 'home.pug')
 );
 
-// TODO: Build project page
-
 // Build blog pages
 const postsData = data.filter((d) => d.relativeDir.match(/^blog\//));
 
-const postPages = postsData.map((p) => {
+// Check for published date and title
+const missingPublished = [];
+const missingTitle = [];
+postsData.forEach((p) => {
+  if (!p.fm.published || isNaN(Date.parse(p.fm.published))) {
+    missingPublished.push(p.relativePath);
+  }
+  if (!p.fm.title) {
+    missingTitle.push(p.relativePath);
+  }
+});
+
+if (missingPublished.length) {
+  console.error(
+    `Invalid or missing frontmatter 'published' for following blog posts. Add property 'published' with date formatted 'yyyy-mm-dd'\n\n${missingPublished.join(
+      '\n'
+    )}\n`
+  );
+  throw new Error(`Aborting build.`);
+}
+if (missingTitle.length) {
+  console.error(
+    `Invalid or missing frontmatter 'title' for following blog posts. Add property 'title' to the following blog pages:\n\n${missingTitle.join(
+      '\n'
+    )}\n`
+  );
+  throw new Error(`Aborting build.`);
+}
+
+const postsDataSorted = postsData.sort(
+  (a, b) => new Date(b.fm.published) - new Date(a.fm.published)
+);
+
+const postPages = postsDataSorted.map((p) => {
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
       post: p
     }
   );
-  return { html, slug: p.slug };
+  const wwwLink = `/blog/p/${p.slug}`;
+  const filepath = `blog/p/${p.slug}.html`; // for dist Dir
+  return { html, slug: p.slug, wwwLink, filepath, title: p.fm.title };
 });
 
 console.log('Building blog home page...');
 const blogHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', 'blog.pug')
+  path.resolve(__dirname, 'templates', 'pages', 'blog.pug'),
+  {
+    postPages
+  }
 );
 
 console.log('Building projects page...');
@@ -74,8 +110,7 @@ const filemap = {
 
 console.log(`Building ${postPages.length} blog post pages...`);
 postPages.forEach((p) => {
-  const file = `blog/p/${p.slug}.html`;
-  filemap[file] = p.html;
+  filemap[p.filepath] = p.html;
 });
 
 const builtPages = Object.keys(filemap);

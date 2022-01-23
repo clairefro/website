@@ -6,3 +6,7 @@ block head
   title blog | clairefro
 block content
   h1 Blog Home
+  ul 
+    each postPage in postPages
+      li
+        a(href=postPage.wwwLink)= postPage.title

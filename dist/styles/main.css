@@ -1,26 +1,41 @@
-/* Fonts */
-@font-face {
-  font-family: 'Cardo';
-  src: url('/assets/fonts/Cardo/Cardo-Regular.ttf');
+/* Variables */
+:root {
+  /* Edit these raw RGB colors */
+  --color-bg: #fff;
+  --color-text-light: rgb(55, 66, 67);
+  --color-text-dark: rgb(36, 44, 45);
+  --color-primary-raw-rgb: 150, 70, 106;
+  --color-secondary-raw-rgb: 255, 173, 31;
+  --alpha: 0.3;
+
+  /* Calculated */
+  --color-primary: rgb(var(--color-primary-raw-rgb));
+  --color-primary-mask: rgba(var(--color-primary-raw-rgb), var(--alpha));
+  --color-secondary: rgb(var(--color-secondary-raw-rgb));
+  --color-secondary-mask: rgba(var(--color-secondary-raw-rgb), var(--alpha));
 }
-@font-face {
-  font-family: 'Cardo';
-  src: url('/assets/fonts/Cardo/Cardo-Bold.ttf');
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Cardo';
-  src: url('/assets/fonts/Cardo/Cardo-Italic.ttf');
-  font-style: italic, oblique;
-}
+/* end Variables */
 
 body {
   font-family: Georgia, serif;
+  color: var(--color-text-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-dark);
 }
 
 code,
 pre {
   font-family: Andale Mono, monospace;
+  background-color: var(--color-primary-mask);
+  border-radius: 6px;
+  padding: 0.25rem;
 }
 
 #nav ul {
