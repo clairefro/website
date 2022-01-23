@@ -33,6 +33,37 @@ character in a paragraph into a `<br />` tag.
 When you _do_ want to insert a `<br />` break tag using Markdown, you
 end a line with two or more spaces, then type return.
 
+## Code
+
+Here is some js code
+
+```js
+let seenTags = false;
+let inTags = false;
+md.parse(contents, {}).forEach(function forToken(token) {
+ if (
+  (token.type === "bullet_list_open") &&
+  (token.level === 0)
+ ) {
+  if (!seenRelated) {
+  (token.type === "bullet_list_close") &&
+  (token.level === 0)
+ ) {
+  inRules = false;
+  inTags = false;
+ } else if (token.type === "inline") {
+  if (inRules) {
+   const rule = rulesLeft.shift();
+   test.ok(rule,
+    "Missing rule implementation for " + token.content + ".");
+   if (rule) {
+    const ruleName = rule.names[0];
+    test.equal(token.content, expected, "Rule mismatch.");
+    token.content.replace(/\*\*/g, "").split(/ - |, |,\n/);
+   const tag = parts.shift();
+   test.deepEqual(parts, tagToRules[tag] || [],
+```
+
 ### Headers
 
 Markdown supports two styles of headers, [Setext] [1] and [atx] [2].
