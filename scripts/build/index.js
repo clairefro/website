@@ -59,9 +59,15 @@ const blogHtml = pug.renderFile(
   path.resolve(__dirname, 'templates', 'pages', 'blog.pug')
 );
 
+console.log('Building projects page...');
+const projectsHtml = pug.renderFile(
+  path.resolve(__dirname, 'templates', 'pages', 'projects.pug')
+);
+
 // Write files
 const filemap = {
   'index.html': homeHtml,
+  'projects.html': projectsHtml,
   '404.html': notfoundHtml,
   'blog/index.html': blogHtml
 };
