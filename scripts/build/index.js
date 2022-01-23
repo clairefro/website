@@ -18,7 +18,7 @@ const distDir = package.config.distDir;
 const contentDir = path.resolve(__dirname, '..', '..', config.contentDir);
 const staticDir = path.resolve(__dirname, '..', '..', config.staticDir);
 
-const data = extract(contentDir, contentDir); // TODO: write filestream instead of storing all markdown content in memory
+const data = extract(contentDir, contentDir, { omitContent: true });
 
 // Build dirs
 console.log('Building blog dir...');
@@ -77,11 +77,16 @@ const postsDataSorted = postsData.sort(
 );
 
 const postPages = postsDataSorted.map((p) => {
+  const markdown = fs.readFileSync(
+    path.resolve(contentDir, p.relativePath),
+    'utf-8'
+  );
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
       post: p,
-      marked
+      marked,
+      markdown
     }
   );
   const wwwLink = `/blog/p/${p.slug}`;
@@ -119,7 +124,7 @@ const builtPages = Object.keys(filemap);
 
 console.log(
   `Built ${builtPages.length} pages: `,
-  util.inspect(builtPages, { maxArrayLength: 10 })
+  util.inspect(builtPages, { maxArrayLength: 20 })
 );
 
 console.log('Writing web pages to dist dir...');
