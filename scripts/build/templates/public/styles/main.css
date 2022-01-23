@@ -1,21 +1,10 @@
-/* Fonts */
-@font-face {
-  font-family: 'Cardo';
-  src: url('/assets/fonts/Cardo/Cardo-Regular.ttf');
-}
-@font-face {
-  font-family: 'Cardo';
-  src: url('/assets/fonts/Cardo/Cardo-Bold.ttf');
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Cardo';
-  src: url('/assets/fonts/Cardo/Cardo-Italic.ttf');
-  font-style: italic, oblique;
+body {
+  font-family: Georgia, serif;
 }
 
-body {
-  font-family: Cardo;
+code,
+pre {
+  font-family: Andale Mono, monospace;
 }
 
 #nav ul {
