@@ -7,6 +7,7 @@
   --color-primary-raw-rgb: 150, 70, 106;
   --color-secondary-raw-rgb: 255, 173, 31;
   --alpha: 0.3;
+  --border-radius: 6px;
 
   /* Calculated */
   --color-primary: rgb(var(--color-primary-raw-rgb));
@@ -15,6 +16,8 @@
   --color-secondary-mask: rgba(var(--color-secondary-raw-rgb), var(--alpha));
 }
 /* end Variables */
+
+/* General */
 
 body {
   font-family: Georgia, serif;
@@ -30,17 +33,70 @@ h6 {
   color: var(--color-text-dark);
 }
 
+p,
+a {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.mouse {
+  outline: none;
+  border-radius: 0;
+}
+
+a:link {
+  color: var(--color-secondary);
+}
+
+a:visited {
+  color: var(--color-primary);
+}
+
+a:focus,
+a:hover,
+a:active {
+  border-bottom: 2px solid;
+}
+
+a:focus {
+  outline: solid 2px var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+a:active {
+  color: var(--color-text-dark);
+}
+
 code,
 pre {
   font-family: Andale Mono, monospace;
   background-color: var(--color-primary-mask);
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   padding: 0.25rem;
 }
 
+pre {
+  overflow-x: auto;
+}
+
+blockquote {
+  background-color: var(--color-secondary-mask);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border-left: 5px solid var(--color-secondary);
+}
+
+/* Components */
 #nav ul {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
+}
+
+#nav a {
+  color: var(--color-secondary);
 }

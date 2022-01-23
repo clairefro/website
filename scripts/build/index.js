@@ -77,10 +77,9 @@ const postsDataSorted = postsData.sort(
 );
 
 const postPages = postsDataSorted.map((p) => {
-  const markdown = fs.readFileSync(
-    path.resolve(contentDir, p.relativePath),
-    'utf-8'
-  );
+  const markdown = fs
+    .readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
+    .replace(/^\s*---[\s\S]*?---/, ''); // chop off frontmatter
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
