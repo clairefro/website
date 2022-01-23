@@ -7,3 +7,4 @@ block head
 
 block content
   h1 #{ post.fm.title }
+  div!= marked.parse(post.content)

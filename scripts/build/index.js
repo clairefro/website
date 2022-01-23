@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const pug = require('pug');
+const marked = require('marked');
 const extract = require('extract-md-data');
 const config = require('../../config');
 const package = require('../../package.json');
@@ -17,7 +18,7 @@ const distDir = package.config.distDir;
 const contentDir = path.resolve(__dirname, '..', '..', config.contentDir);
 const staticDir = path.resolve(__dirname, '..', '..', config.staticDir);
 
-const data = extract(contentDir, contentDir, { omitContent: true }); // TODO: update lib to deafult to single path source
+const data = extract(contentDir, contentDir); // TODO: write filestream instead of storing all markdown content in memory
 
 // Build dirs
 console.log('Building blog dir...');
@@ -79,12 +80,13 @@ const postPages = postsDataSorted.map((p) => {
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
-      post: p
+      post: p,
+      marked
     }
   );
   const wwwLink = `/blog/p/${p.slug}`;
-  const filepath = `blog/p/${p.slug}.html`; // for dist Dir
-  return { html, slug: p.slug, wwwLink, filepath, title: p.fm.title };
+  const outpath = `blog/p/${p.slug}.html`; // for dist Dir
+  return { html, slug: p.slug, wwwLink, outpath, title: p.fm.title };
 });
 
 console.log('Building blog home page...');
@@ -110,7 +112,7 @@ const filemap = {
 
 console.log(`Building ${postPages.length} blog post pages...`);
 postPages.forEach((p) => {
-  filemap[p.filepath] = p.html;
+  filemap[p.outpath] = p.html;
 });
 
 const builtPages = Object.keys(filemap);
