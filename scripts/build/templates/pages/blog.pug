@@ -5,8 +5,9 @@ block head
   link(rel='stylesheet', href='/styles/main.css')
   title blog | clairefro
 block content
-  h1 Blog Home
+  h1 Blog
   ul 
     each postPage in postPages
       li
-        a(href=postPage.wwwLink)= postPage.title
+        a(href=postPage.wwwLink) #{ postPage.title }
+        span.date #{ ' ' }#{ postPage.published }

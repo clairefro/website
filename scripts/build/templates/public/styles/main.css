@@ -6,7 +6,7 @@
   --color-text-dark: rgb(36, 44, 45);
   --color-primary-raw-rgb: 150, 70, 106;
   --color-secondary-raw-rgb: 255, 173, 31;
-  --alpha: 0.3;
+  --alpha: 0.2;
   --border-radius: 6px;
 
   /* Calculated */
@@ -17,11 +17,32 @@
 }
 /* end Variables */
 
+/* Layout */
+
+.page {
+  max-width: 650px;
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (max-width: 650px) {
+  .page {
+    margin: 0 auto;
+  }
+}
+
+.footer-spacer {
+  flex-grow: 1;
+}
+
 /* General */
 
 body {
   font-family: Georgia, serif;
   color: var(--color-text-light);
+  font-size: 18px;
 }
 
 h1,
@@ -36,13 +57,18 @@ h6 {
 
 p,
 a {
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 a {
   text-decoration: none;
+  background-color: rgba(98, 46, 69, 1);
+  padding: 0.25rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
 }
 
+/* Eliminate outline only for mouse clicks. Preserve outline on tab nav*/
 a.mouse {
   outline: none !important;
   border-radius: 0 !important;
@@ -53,7 +79,7 @@ a:link {
 }
 
 a:visited {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 a:focus,
@@ -68,13 +94,19 @@ a:focus {
 }
 
 a:active {
-  color: var(--color-text-dark);
+  color: var(--color-bg);
+}
+
+code,
+pre,
+blockquote {
+  font-size: 0.8rem;
 }
 
 code,
 pre {
   font-family: Andale Mono, monospace;
-  background-color: var(--color-primary-mask);
+  /* background-color: var(--color-primary-mask); */
   border-radius: var(--border-radius);
   padding: 0.25rem;
 }
@@ -90,14 +122,53 @@ blockquote {
   border-left: 5px solid var(--color-secondary);
 }
 
+/* Code highlighting overrides */
+pre code.hljs {
+  background-color: transparent;
+}
+
+code {
+  background-color: var(--color-primary-mask);
+}
+
+pre {
+  background-color: var(--color-secondary-mask);
+}
+
 /* Components */
 #nav ul {
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  display: flex;
+  padding-left: 0;
+  /* justify-content: flex-end; */
+}
+
+#nav li {
+  margin-right: 1rem;
 }
 
 #nav a {
   color: var(--color-secondary);
+  font-size: inherit;
+}
+
+.date {
+  font-size: 0.75em;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+hr {
+  max-width: 50px;
+  border-top: solid 1px;
+  margin: 2rem auto;
+}
+
+#footer {
+  font-size: 0.9rem;
+  padding-bottom: 2rem;
+}
+
+#clicky-banner {
+  background-color: transparent;
 }

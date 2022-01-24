@@ -35,33 +35,138 @@ end a line with two or more spaces, then type return.
 
 ## Code
 
-Here is some js code
+Here is some `js` code
 
 ```js
-let seenTags = false;
-let inTags = false;
-md.parse(contents, {}).forEach(function forToken(token) {
- if (
-  (token.type === "bullet_list_open") &&
-  (token.level === 0)
- ) {
-  if (!seenRelated) {
-  (token.type === "bullet_list_close") &&
-  (token.level === 0)
- ) {
-  inRules = false;
-  inTags = false;
- } else if (token.type === "inline") {
-  if (inRules) {
-   const rule = rulesLeft.shift();
-   test.ok(rule,
-    "Missing rule implementation for " + token.content + ".");
-   if (rule) {
-    const ruleName = rule.names[0];
-    test.equal(token.content, expected, "Rule mismatch.");
-    token.content.replace(/\*\*/g, "").split(/ - |, |,\n/);
-   const tag = parts.shift();
-   test.deepEqual(parts, tagToRules[tag] || [],
+console.log(`Building ${postPages.length} blog post pages...`);
+postPages.forEach((p) => {
+  filemap[p.outpath] = p.html;
+});
+
+const builtPages = Object.keys(filemap);
+
+console.log(
+  `Built ${builtPages.length} pages: `,
+  util.inspect(builtPages, { maxArrayLength: 20 })
+);
+
+console.log('Writing web pages to dist dir...');
+Object.entries(filemap).forEach(([filename, html]) => {
+  fs.writeFileSync(path.resolve(distDir, filename), html);
+});
+
+/** Copy over static files */
+copySync(staticDir, distDir);
+console.log('Done.');
+```
+
+How about some `css` styling
+
+```css
+/* Variables */
+:root {
+  /* Edit these raw RGB colors */
+  --color-bg: #fff;
+  --color-text-light: rgb(55, 66, 67);
+  --color-text-dark: rgb(36, 44, 45);
+  --color-primary-raw-rgb: 150, 70, 106;
+  --color-secondary-raw-rgb: 255, 173, 31;
+  --alpha: 0.2;
+  --border-radius: 6px;
+
+  /* Calculated */
+  --color-primary: rgb(var(--color-primary-raw-rgb));
+  --color-primary-mask: rgba(var(--color-primary-raw-rgb), var(--alpha));
+  --color-secondary: rgb(var(--color-secondary-raw-rgb));
+  --color-secondary-mask: rgba(var(--color-secondary-raw-rgb), var(--alpha));
+}
+/* end Variables */
+
+/* General */
+
+body {
+  font-family: Georgia, serif;
+  color: var(--color-text-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-dark);
+  font-family: Trebuchet, sans-serif;
+}
+
+p,
+a {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.mouse {
+  outline: none !important;
+  border-radius: 0 !important;
+}
+
+a:link {
+  color: var(--color-secondary);
+}
+
+a:visited {
+  color: var(--color-primary);
+}
+
+a:focus,
+a:hover,
+a:active {
+  border-bottom: 2px solid;
+}
+
+a:focus {
+  outline: solid 2px var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+a:active {
+  color: var(--color-text-dark);
+}
+
+code,
+pre {
+  font-family: Andale Mono, monospace;
+  /* background-color: var(--color-primary-mask); */
+  border-radius: var(--border-radius);
+  padding: 0.25rem;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+blockquote {
+  background-color: var(--color-secondary-mask);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border-left: 5px solid var(--color-secondary);
+}
+
+/* Code highlighting overrides */
+pre code.hljs {
+  background-color: var(--color-primary-mask);
+}
+
+/* Components */
+#nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
 ```
 
 ### Headers

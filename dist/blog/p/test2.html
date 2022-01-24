@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🍠&lt;/text&gt;&lt;/svg&gt;"><title>clairefro</title><meta name="description" content="clairefro's corner of the internet"><meta property="og:title" content="clairefro"><meta property="og:image" content="/assets/social.png"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@clairefroe"><meta name="twitter:title" content="clairefro"><meta name="twitter:description" content="Your description."><meta name="twitter:image" content="/assets/social.png"><link rel="stylesheet" href="/styles/main.css"><title>test2 | blog | clairefro</title></head><body><nav id="nav"><ul> <li><a href="/">Home</a></li><li><a href="/projects">Projects</a></li><li><a href="/blog">Blog</a></li></ul></nav><h1>test2</h1><div><p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🍠&lt;/text&gt;&lt;/svg&gt;"><title>clairefro</title><meta property="og:title" content="clairefro"><meta name="description" content="clairefro's corner of the internet"><meta property="og:image" content="/assets/social.png"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@clairefroe"><meta name="twitter:title" content="clairefro"><meta name="twitter:description" content="clairefro's corner of the internet"><meta name="twitter:image" content="/assets/social.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script><link rel="stylesheet" href="/styles/main.css"><title>test2 | blog | clairefro</title></head><body><div class="page"><div class="top"> <nav id="nav"><ul> <li><a href="/">About</a></li><li><a href="/projects">Projects</a></li><li><a href="/blog">Blog</a></li></ul></nav><h1>test2</h1><div><p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted
 document should be publishable as-is, as plain text, without looking
 like it&#39;s been marked up with tags or formatting instructions.</p>
 <p>While Markdown&#39;s syntax has been influenced by several existing text-to-HTML
@@ -19,31 +19,133 @@ character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
 <p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you
 end a line with two or more spaces, then type return.</p>
 <h2 id="code">Code</h2>
-<p>Here is some js code</p>
-<pre><code class="language-js">let seenTags = false;
-let inTags = false;
-md.parse(contents, {}).forEach(function forToken(token) {
- if (
-  (token.type === &quot;bullet_list_open&quot;) &amp;&amp;
-  (token.level === 0)
- ) {
-  if (!seenRelated) {
-  (token.type === &quot;bullet_list_close&quot;) &amp;&amp;
-  (token.level === 0)
- ) {
-  inRules = false;
-  inTags = false;
- } else if (token.type === &quot;inline&quot;) {
-  if (inRules) {
-   const rule = rulesLeft.shift();
-   test.ok(rule,
-    &quot;Missing rule implementation for &quot; + token.content + &quot;.&quot;);
-   if (rule) {
-    const ruleName = rule.names[0];
-    test.equal(token.content, expected, &quot;Rule mismatch.&quot;);
-    token.content.replace(/\*\*/g, &quot;&quot;).split(/ - |, |,\n/);
-   const tag = parts.shift();
-   test.deepEqual(parts, tagToRules[tag] || [],
+<p>Here is some <code>js</code> code</p>
+<pre><code class="language-js">console.log(`Building ${postPages.length} blog post pages...`);
+postPages.forEach((p) =&gt; {
+  filemap[p.outpath] = p.html;
+});
+
+const builtPages = Object.keys(filemap);
+
+console.log(
+  `Built ${builtPages.length} pages: `,
+  util.inspect(builtPages, { maxArrayLength: 20 })
+);
+
+console.log(&#39;Writing web pages to dist dir...&#39;);
+Object.entries(filemap).forEach(([filename, html]) =&gt; {
+  fs.writeFileSync(path.resolve(distDir, filename), html);
+});
+
+/** Copy over static files */
+copySync(staticDir, distDir);
+console.log(&#39;Done.&#39;);
+</code></pre>
+<p>How about some <code>css</code> styling</p>
+<pre><code class="language-css">/* Variables */
+:root {
+  /* Edit these raw RGB colors */
+  --color-bg: #fff;
+  --color-text-light: rgb(55, 66, 67);
+  --color-text-dark: rgb(36, 44, 45);
+  --color-primary-raw-rgb: 150, 70, 106;
+  --color-secondary-raw-rgb: 255, 173, 31;
+  --alpha: 0.2;
+  --border-radius: 6px;
+
+  /* Calculated */
+  --color-primary: rgb(var(--color-primary-raw-rgb));
+  --color-primary-mask: rgba(var(--color-primary-raw-rgb), var(--alpha));
+  --color-secondary: rgb(var(--color-secondary-raw-rgb));
+  --color-secondary-mask: rgba(var(--color-secondary-raw-rgb), var(--alpha));
+}
+/* end Variables */
+
+/* General */
+
+body {
+  font-family: Georgia, serif;
+  color: var(--color-text-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-dark);
+  font-family: Trebuchet, sans-serif;
+}
+
+p,
+a {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.mouse {
+  outline: none !important;
+  border-radius: 0 !important;
+}
+
+a:link {
+  color: var(--color-secondary);
+}
+
+a:visited {
+  color: var(--color-primary);
+}
+
+a:focus,
+a:hover,
+a:active {
+  border-bottom: 2px solid;
+}
+
+a:focus {
+  outline: solid 2px var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+a:active {
+  color: var(--color-text-dark);
+}
+
+code,
+pre {
+  font-family: Andale Mono, monospace;
+  /* background-color: var(--color-primary-mask); */
+  border-radius: var(--border-radius);
+  padding: 0.25rem;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+blockquote {
+  background-color: var(--color-secondary-mask);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border-left: 5px solid var(--color-secondary);
+}
+
+/* Code highlighting overrides */
+pre code.hljs {
+  background-color: var(--color-primary-mask);
+}
+
+/* Components */
+#nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
 </code></pre>
 <h3 id="headers">Headers</h3>
 <p>Markdown supports two styles of headers, [Setext] [1] and [atx] [2].</p>
@@ -266,4 +368,6 @@ HTML <code>&lt;em&gt;</code> tag; double <code>*</code>&#39;s or <code>_</code>&
 Unlike a pre-formatted code block, a code span indicates code within a
 normal paragraph. For example:</p>
 <p>Use the <code>printf()</code> function.</p>
-</div><div id="footer"><p>some footer content</p><a title="Real Time Web Analytics" href="http://clicky.com/101351229" target="_blank"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0"><script async src="//static.getclicky.com/101351229.js"></script><noscript><p> <img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101351229ns.gif"></p></noscript></a></div><script src="/scripts/main.js"></script></body></html>
+</div></div><div class="footer-spacer"> </div><div id="footer"><hr class="separator"><p>some footer content</p><a id="clicky-banner" title="Real Time Web Analytics" href="http://clicky.com/101351229" target="_blank"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0"><script async src="//static.getclicky.com/101351229.js"></script><noscript><p> <img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101351229ns.gif"></p></noscript></a></div></div><script src="/scripts/main.js"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  hljs.highlightAll();
+});</script></body></html>

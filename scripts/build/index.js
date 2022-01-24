@@ -4,6 +4,7 @@ const util = require('util');
 const pug = require('pug');
 const marked = require('marked');
 const extract = require('extract-md-data');
+const { chopFm } = require('./utils/chopFm');
 const config = require('../../config');
 const package = require('../../package.json');
 const {
@@ -77,9 +78,9 @@ const postsDataSorted = postsData.sort(
 );
 
 const postPages = postsDataSorted.map((p) => {
-  const markdown = fs
-    .readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
-    .replace(/^\s*---[\s\S]*?---/, ''); // chop off frontmatter
+  const markdown = chopFm(
+    fs.readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
+  ); // chop off frontmatter
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
@@ -90,7 +91,14 @@ const postPages = postsDataSorted.map((p) => {
   );
   const wwwLink = `/blog/p/${p.slug}`;
   const outpath = `blog/p/${p.slug}.html`; // for dist Dir
-  return { html, slug: p.slug, wwwLink, outpath, title: p.fm.title };
+  return {
+    html,
+    slug: p.slug,
+    wwwLink,
+    outpath,
+    title: p.fm.title,
+    published: p.fm.published
+  };
 });
 
 console.log('Building blog home page...');
@@ -102,8 +110,15 @@ const blogHtml = pug.renderFile(
 );
 
 console.log('Building projects page...');
+const projectsMarkdown = chopFm(
+  fs.readFileSync(path.resolve(contentDir, 'projects', 'index.md'), 'utf-8')
+);
 const projectsHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', 'projects.pug')
+  path.resolve(__dirname, 'templates', 'pages', 'projects.pug'),
+  {
+    markdown: projectsMarkdown,
+    marked
+  }
 );
 
 // Write files

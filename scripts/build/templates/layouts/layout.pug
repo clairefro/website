@@ -1,3 +1,6 @@
+- var defaultTitle = `clairefro`;
+- var defaultDescription = `clairefro's corner of the internet`;
+
 doctype html
 html(lang='en')
   head
@@ -7,45 +10,42 @@ html(lang='en')
       rel='icon',
       href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍠</text></svg>'
     )
-    title clairefro
-    meta(name='description', content='clairefro\'s corner of the internet')
-    meta(property='og:title', content='clairefro')
+    title #{ defaultTitle }
+
+    meta(property='og:title', content=defaultTitle)
+    meta(name='description', content=defaultDescription)
     meta(property='og:image', content='/assets/social.png')
     meta(name='twitter:card', content='summary')
     meta(name='twitter:site', content='@clairefroe')
-    meta(name='twitter:title', content='clairefro')
-    meta(name='twitter:description', content='Your description.')
+    meta(name='twitter:title', content=defaultTitle)
+    meta(name='twitter:description', content=defaultDescription)
     meta(name='twitter:image', content='/assets/social.png')
+
+    //- highlight.js
+    link(
+      rel='stylesheet',
+      href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css'
+    )
+    script(
+      src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js'
+    )
 
     //- additions and overrides
     block head
 
   body
-    include ../includes/nav.pug
-    block content
+    .page
+      .top 
+        include ../includes/nav.pug
+        block content
 
-    block footer
-      #footer
-        p some footer content
-        //- Clicky analytics
-        a(
-          title='Real Time Web Analytics',
-          href='http://clicky.com/101351229',
-          target='_blank'
-        )
-          img(
-            alt='Clicky',
-            src='//static.getclicky.com/media/links/badge.gif',
-            border='0'
-          )
-          script(async, src='//static.getclicky.com/101351229.js')
-          noscript
-            p 
-              img(
-                alt='Clicky',
-                width='1',
-                height='1',
-                src='//in.getclicky.com/101351229ns.gif'
-              )
+      .footer-spacer 
+
+      block footer
+        include ../includes/footer.pug
 
     script(src='/scripts/main.js')
+    script.
+      document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+      });
