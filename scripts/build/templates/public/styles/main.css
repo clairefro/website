@@ -5,6 +5,7 @@
   --color-text-light: rgb(55, 66, 67);
   --color-text-dark: rgb(36, 44, 45);
   --color-primary-raw-rgb: 150, 70, 106;
+  --color-primary-dark-raw-rgb: 98, 46, 69;
   --color-secondary-raw-rgb: 255, 173, 31;
   --alpha: 0.2;
   --border-radius: 6px;
@@ -12,6 +13,7 @@
   /* Calculated */
   --color-primary: rgb(var(--color-primary-raw-rgb));
   --color-primary-mask: rgba(var(--color-primary-raw-rgb), var(--alpha));
+  --color-primary-dark: rgb(var(--color-primary-dark-raw-rgb));
   --color-secondary: rgb(var(--color-secondary-raw-rgb));
   --color-secondary-mask: rgba(var(--color-secondary-raw-rgb), var(--alpha));
 }
@@ -62,7 +64,7 @@ a {
 
 a {
   text-decoration: none;
-  background-color: rgba(98, 46, 69, 1);
+  background-color: var(--color-primary-dark);
   padding: 0.25rem;
   border-radius: var(--border-radius);
   font-size: 0.9rem;
