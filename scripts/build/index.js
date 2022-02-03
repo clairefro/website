@@ -81,15 +81,17 @@ const postPages = postsDataSorted.map((p) => {
   const markdown = chopFm(
     fs.readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
   ); // chop off frontmatter
+  const excerpt = markdown.trim().slice(0, 150) + '...';
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
       post: p,
       marked,
-      markdown
+      markdown,
+      excerpt
     }
   );
-  const wwwLink = `/blog/p/${p.slug}`;
+  const wwwLink = `/blog/p/${p.slug}`; // for intrasite linking
   const outpath = `blog/p/${p.slug}.html`; // for dist Dir
   return {
     html,

@@ -4,7 +4,14 @@ extends ../layouts/layout.pug
 block head
   link(rel='stylesheet', href='/styles/main.css')
   title #{ post.fm.title } | blog | clairefro
+  meta(name='description', content=excerpt)
+  meta(property='article:published_time', content=post.fm.published)
+  meta(property='article:author', content='Claire Froelich')
+  meta(name='twitter:title', content=post.fm.title + ' | blog | clairefro')
+  meta(name='twitter:description', content=excerpt)
+  meta(property='og:title', content=post.fm.title + ' | blog | clairefro')
 
 block content
-  h1 #{ post.fm.title }
+  h1.mb-0 #{ post.fm.title }
+  p.mt-0.date  #{ post.fm.published }
   div!= marked.parse(markdown)

@@ -6,7 +6,7 @@
   --color-text-dark: rgb(36, 44, 45);
   --color-primary-raw-rgb: 150, 70, 106;
   --color-primary-dark-raw-rgb: 98, 46, 69;
-  --color-secondary-raw-rgb: 255, 173, 31;
+  --color-secondary-raw-rgb: 255, 175, 0;
   --alpha: 0.2;
   --border-radius: 6px;
 
@@ -59,15 +59,11 @@ h6 {
 
 p,
 a {
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 a {
   text-decoration: none;
-  background-color: var(--color-primary-dark);
-  padding: 0.25rem;
-  border-radius: var(--border-radius);
-  font-size: 0.9rem;
 }
 
 /* Eliminate outline only for mouse clicks. Preserve outline on tab nav*/
@@ -96,7 +92,7 @@ a:focus {
 }
 
 a:active {
-  color: var(--color-bg);
+  color: var(--color-primary);
 }
 
 code,
@@ -151,13 +147,23 @@ pre {
 
 #nav a {
   color: var(--color-secondary);
+  font-family: Trebuchet, sans-serif;
   font-size: inherit;
+  font-weight: bold;
 }
 
 .date {
   font-size: 0.75em;
   font-style: italic;
   color: rgba(0, 0, 0, 0.3);
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
 }
 
 hr {

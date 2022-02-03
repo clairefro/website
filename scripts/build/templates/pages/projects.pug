@@ -4,6 +4,10 @@ extends ../layouts/layout.pug
 block head
   link(rel='stylesheet', href='/styles/main.css')
   title projects | clairefro
+  meta(name='description', content='projects from clairefro')
+  meta(name='twitter:title', content='projects | clairefro')
+  meta(name='twitter:description', content='projects from clairefro')
+  meta(property='og:title', content='projects | clairefro')
 
 block content
   div!= marked.parse(markdown)
