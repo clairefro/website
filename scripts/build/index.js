@@ -4,7 +4,7 @@ const util = require('util');
 const pug = require('pug');
 const marked = require('marked');
 const extract = require('extract-md-data');
-const { chopFm } = require('./utils/chopFm');
+const { chopFm, validatePosts } = require('./utils');
 const config = require('../../config');
 const package = require('../../package.json');
 const {
@@ -41,46 +41,36 @@ const homeHtml = pug.renderFile(
   path.resolve(__dirname, 'templates', 'pages', 'home.pug')
 );
 
+console.log('Building projects page...');
+const projectsMarkdown = chopFm(
+  fs.readFileSync(path.resolve(contentDir, 'projects', 'index.md'), 'utf-8')
+);
+const projectsHtml = pug.renderFile(
+  path.resolve(__dirname, 'templates', 'pages', 'projects.pug'),
+  {
+    markdown: projectsMarkdown,
+    marked
+  }
+);
+
 // Build blog pages
 const postsData = data.filter((d) => d.relativeDir.match(/^blog\//));
 
-// Check for published date and title
-const missingPublished = [];
-const missingTitle = [];
-postsData.forEach((p) => {
-  if (!p.fm.published || isNaN(Date.parse(p.fm.published))) {
-    missingPublished.push(p.relativePath);
-  }
-  if (!p.fm.title) {
-    missingTitle.push(p.relativePath);
-  }
-});
-
-if (missingPublished.length) {
-  console.error(
-    `Invalid or missing frontmatter 'published' for following blog posts. Add property 'published' with date formatted 'yyyy-mm-dd'\n\n${missingPublished.join(
-      '\n'
-    )}\n`
-  );
-  throw new Error(`Aborting build.`);
-}
-if (missingTitle.length) {
-  console.error(
-    `Invalid or missing frontmatter 'title' for following blog posts. Add property 'title' to the following blog pages:\n\n${missingTitle.join(
-      '\n'
-    )}\n`
-  );
-  throw new Error(`Aborting build.`);
-}
+// Check published date and title exists on all blog posts frontmatter
+validatePosts(postsData);
 
 const postsDataSorted = postsData.sort(
   (a, b) => new Date(b.fm.published) - new Date(a.fm.published)
 );
 
+console.log(
+  `Building and writing ${postsDataSorted.length} blog post pages...`
+);
 const postPages = postsDataSorted.map((p) => {
+  // chop off frontmatter
   const markdown = chopFm(
     fs.readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
-  ); // chop off frontmatter
+  );
   const excerpt = markdown.trim().slice(0, 150) + '...';
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
@@ -93,8 +83,11 @@ const postPages = postsDataSorted.map((p) => {
   );
   const wwwLink = `/blog/p/${p.slug}`; // for intrasite linking
   const outpath = `blog/p/${p.slug}.html`; // for dist Dir
+
+  // write page to prevent storing tons of html blog pages in memory
+  fs.writeFileSync(path.resolve(distDir, outpath), html);
+
   return {
-    html,
     slug: p.slug,
     wwwLink,
     outpath,
@@ -111,42 +104,28 @@ const blogHtml = pug.renderFile(
   }
 );
 
-console.log('Building projects page...');
-const projectsMarkdown = chopFm(
-  fs.readFileSync(path.resolve(contentDir, 'projects', 'index.md'), 'utf-8')
-);
-const projectsHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', 'projects.pug'),
-  {
-    markdown: projectsMarkdown,
-    marked
-  }
-);
-
-// Write files
-const filemap = {
+// Write non-blog-post files
+const otherFilemap = {
   'index.html': homeHtml,
   'projects.html': projectsHtml,
   '404.html': notfoundHtml,
   'blog/index.html': blogHtml
 };
 
-console.log(`Building ${postPages.length} blog post pages...`);
-postPages.forEach((p) => {
-  filemap[p.outpath] = p.html;
+console.log('Writing other web pages to dist dir...');
+Object.entries(otherFilemap).forEach(([filename, html]) => {
+  fs.writeFileSync(path.resolve(distDir, filename), html);
 });
 
-const builtPages = Object.keys(filemap);
+const builtPages = [
+  ...Object.keys(otherFilemap),
+  ...postPages.map((p) => p.outpath)
+];
 
 console.log(
   `Built ${builtPages.length} pages: `,
   util.inspect(builtPages, { maxArrayLength: 20 })
 );
-
-console.log('Writing web pages to dist dir...');
-Object.entries(filemap).forEach(([filename, html]) => {
-  fs.writeFileSync(path.resolve(distDir, filename), html);
-});
 
 /** Copy over static files */
 copySync(staticDir, distDir);
