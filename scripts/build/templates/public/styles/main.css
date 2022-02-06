@@ -32,6 +32,7 @@
 @media (max-width: 650px) {
   .page {
     margin: 0 auto;
+    font-size: 0.85rem;
   }
 }
 
@@ -44,7 +45,7 @@
 body {
   font-family: Georgia, serif;
   color: var(--color-text-light);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h1,
