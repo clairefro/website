@@ -68,7 +68,8 @@ a {
 }
 
 /* Eliminate outline only for mouse clicks. Preserve outline on tab nav*/
-a.mouse {
+a.mouse,
+a svg {
   outline: none !important;
   border-radius: 0 !important;
 }
@@ -105,7 +106,6 @@ blockquote {
 code,
 pre {
   font-family: Andale Mono, monospace;
-  /* background-color: var(--color-primary-mask); */
   border-radius: var(--border-radius);
   padding: 0.25rem;
 }
@@ -139,7 +139,6 @@ pre {
   list-style: none;
   display: flex;
   padding-left: 0;
-  /* justify-content: flex-end; */
 }
 
 #nav li {
@@ -180,4 +179,35 @@ hr {
 
 #clicky-banner {
   background-color: transparent;
+}
+
+.icon {
+  max-width: 2em;
+}
+
+.icon {
+  fill: var(--color-primary-dark);
+}
+.icon:hover {
+  fill: var(--color-secondary);
+}
+
+a.icon-link {
+  position: relative;
+  z-index: 99;
+}
+
+a.icon-link:hover,
+a.icon-link:active,
+a.icon-link:focus {
+  border-bottom: none;
+}
+
+#footer.icons {
+  display: flex;
+  align-items: flex-end;
+}
+
+#footer .icon-link {
+  margin-right: 0.5rem;
 }

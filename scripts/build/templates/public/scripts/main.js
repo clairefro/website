@@ -1,10 +1,16 @@
 // prevent focus box from appearing on clicked links (but keep for keyboard accessibilty)
 function handleDown(e) {
-  e.target.classList.add('mouse');
+  // get parent <a> element for svg icon links
+  const closestA = e.target.closest('a');
+  closestA.classList.add('mouse');
 }
 
 function handleBlur(e) {
-  e.target.classList.remove('mouse');
+  // get parent <a> element for svg icon links
+  const closestA = e.target.closest('a');
+  closestA.classList.remove('mouse');
+  // enforce blur of active element when opening new tab
+  document.activeElement.blur();
 }
 
 const links = document.querySelectorAll('a');
