@@ -67,7 +67,7 @@ a {
   text-decoration: none;
 }
 
-/* Eliminate outline only for mouse clicks. Preserve outline on tab nav*/
+/* Eliminate outline only for mouse clicks. Preserve outline for tab nav */
 a.mouse,
 a svg {
   outline: none !important;
@@ -96,11 +96,6 @@ a:focus {
 a:active {
   color: var(--color-primary);
 }
-
-/* a.icon-link {
-  position: relative;
-  z-index: 99;
-} */
 
 a.icon-link:hover,
 a.icon-link:active,
@@ -196,7 +191,7 @@ hr {
 
 #footer {
   font-size: 0.9rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 #footer a:hover {
@@ -210,7 +205,6 @@ hr {
 #email-container {
   display: flex;
   align-items: center;
-  /* font-family: Trebuchet, sans-serif; */
 }
 
 #email-container img {
@@ -231,6 +225,11 @@ hr {
   font-weight: bold;
   font-family: Trebuchet, sans-serif;
 }
+
 #footer-nav span {
   margin-right: 1em;
+}
+
+#footer-padding {
+  margin-bottom: 1rem;
 }

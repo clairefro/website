@@ -21,5 +21,8 @@
     "marked": "^4.0.10",
     "prettier": "^2.5.1",
     "pug": "^3.0.2"
+  },
+  "dependencies": {
+    "jstransformer-markdown-it": "^2.1.0"
   }
 }

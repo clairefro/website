@@ -69,6 +69,6 @@ Follow me on [Dev.to](https://dev.to/clairefro) and [Medium](https://medium.com/
 
 - [(Gen Ed Podcast) Transpacific Translation: From America to Japan to Peru Pt.1](https://open.spotify.com/episode/1nJAbfkejk3Q3omf29UqVt) & [Pt.2](https://open.spotify.com/episode/2rvmUgboc9JRVin5uTxmuo) | Targeting high school students who are undecided on their career path, I share lessons learned over my meandering career journey from interpreter in Japan to remote web developer. Themes include the importance of curiosity and failure.
 
-- [(CS Talks) Transitioning Into Tech](https://youtu.be/pF1HKE4ZoOk) | I am interviewed by Çetin Kaan Taşkıngenç of IEEE Yaşar Üniversitesi Öğrenci Kolu about alternative pathways into tech. Themes include entering tech for people with liberal arts backgrounds, and the benefits of coding bootcamps vs. universities
+- [(CS Talks) Transitioning Into Tech](https://youtu.be/pF1HKE4ZoOk) | I am interviewed by Çetin Kaan Taşkıngenç of IEEE Yaşar Üniversitesi Öğrenci Kolu about alternative pathways into tech. Themes include entering tech for people with a background in liberal arts, and the benefits of coding bootcamps vs. universities
 
 - [(FS Jam Podcast) Multilingual Documentation with Claire Froelich](https://fsjam.org/episodes/episode-26-multilingual-documentation-with-claire-froelich) | I discuss the trials, tribulations and wins of launching and maintaining an open source mutlilingual documentation website for [RedwoodJS](https://redwoodjs.com/) with host and friend Anthony Campolo.
