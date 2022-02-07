@@ -195,7 +195,6 @@ hr {
 }
 
 #footer {
-  font-family: Trebuchet, sans-serif;
   font-size: 0.9rem;
   padding-bottom: 2rem;
 }
@@ -211,6 +210,7 @@ hr {
 #email-container {
   display: flex;
   align-items: center;
+  /* font-family: Trebuchet, sans-serif; */
 }
 
 #email-container img {
@@ -229,6 +229,7 @@ hr {
 #footer-nav {
   display: flex;
   font-weight: bold;
+  font-family: Trebuchet, sans-serif;
 }
 #footer-nav span {
   margin-right: 1em;
