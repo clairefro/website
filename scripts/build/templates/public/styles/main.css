@@ -97,6 +97,28 @@ a:active {
   color: var(--color-primary);
 }
 
+/* a.icon-link {
+  position: relative;
+  z-index: 99;
+} */
+
+a.icon-link:hover,
+a.icon-link:active,
+a.icon-link:focus {
+  border-bottom: none;
+}
+
+.icon {
+  max-width: 2em;
+}
+
+.icon {
+  fill: var(--color-primary-dark);
+}
+.icon:hover {
+  fill: var(--color-secondary);
+}
+
 code,
 pre,
 blockquote {
@@ -173,34 +195,26 @@ hr {
 }
 
 #footer {
+  font-family: Trebuchet, sans-serif;
   font-size: 0.9rem;
   padding-bottom: 2rem;
+}
+
+#footer a:hover {
+  border-bottom: none;
 }
 
 #clicky-banner {
   background-color: transparent;
 }
 
-.icon {
-  max-width: 2em;
+#email-container {
+  display: flex;
+  align-items: center;
 }
 
-.icon {
-  fill: var(--color-primary-dark);
-}
-.icon:hover {
-  fill: var(--color-secondary);
-}
-
-a.icon-link {
-  position: relative;
-  z-index: 99;
-}
-
-a.icon-link:hover,
-a.icon-link:active,
-a.icon-link:focus {
-  border-bottom: none;
+#email-container img {
+  margin-right: 0.5em;
 }
 
 #footer.icons {
@@ -210,4 +224,11 @@ a.icon-link:focus {
 
 #footer .icon-link {
   margin-right: 0.5rem;
+}
+
+#footer-nav {
+  display: flex;
+}
+#footer-nav span {
+  margin-right: 1.5em;
 }

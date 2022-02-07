@@ -19,3 +19,9 @@ links.forEach((a) => {
   a.addEventListener('mousedown', handleDown);
   a.addEventListener('blur', handleBlur);
 });
+
+// Add copyright date in footer
+
+const copyright = document.getElementById('copyright-goes-here');
+
+copyright.innerText = `© ${new Date().getFullYear()}`;
