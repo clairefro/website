@@ -1,7 +1,3 @@
----
-something: foo
----
-
 # Projects
 
 ## Websites
