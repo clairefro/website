@@ -67,11 +67,13 @@ a {
   text-decoration: none;
 }
 
-/* Eliminate outline only for mouse clicks. Preserve outline for tab nav */
-a.mouse,
-a svg {
-  outline: none !important;
-  border-radius: 0 !important;
+a:focus {
+  outline: none;
+}
+
+/* For tab navigation */
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
 }
 
 a:link {
@@ -82,15 +84,10 @@ a:visited {
   color: var(--color-secondary);
 }
 
-a:focus,
+/* a:focus, */
 a:hover,
 a:active {
   border-bottom: 2px solid;
-}
-
-a:focus {
-  outline: solid 2px var(--color-primary);
-  border-radius: var(--border-radius);
 }
 
 a:active {
@@ -98,8 +95,7 @@ a:active {
 }
 
 a.icon-link:hover,
-a.icon-link:active,
-a.icon-link:focus {
+a.icon-link:active {
   border-bottom: none;
 }
 
