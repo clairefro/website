@@ -9,7 +9,7 @@ tags:
 
 > Static websites are simple, but we insist on making them complicated.
 >
-> _\- Conficius if he were a web dev_
+> _\- Confucius if he were a web dev_
 
 Welcome to my new site, brought to you by vanilla everything. No Javascript frameworks, CSS libraries or flashy animations. Just markdown, html templating with `pug`, and plain old Javascript and CSS.
 
