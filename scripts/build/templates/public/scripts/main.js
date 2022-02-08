@@ -1,15 +1,13 @@
-// prevent focus box from appearing on clicked links (but keep for keyboard accessibilty)
+// prevent focus box outline from appearing on clicked links (but keep for keyboard accessibilty)
+// grab closest anchor tag to bubble up from non-text links (like svg icon links)
+
 function handleDown(e) {
-  // get parent <a> element for svg icon links
-  const closestA = e.target.closest('a');
-  closestA.classList.add('mouse');
+  e.target.closest('a').classList.add('mouse');
 }
 
 function handleBlur(e) {
-  // get parent <a> element for svg icon links
-  const closestA = e.target.closest('a');
-  closestA.classList.remove('mouse');
-  // enforce blur of active element when opening new tab
+  e.target.closest('a').classList.remove('mouse');
+  // handle edge case of opening new tab
   document.activeElement.blur();
 }
 
@@ -21,7 +19,5 @@ links.forEach((a) => {
 });
 
 // Add copyright date in footer
-
 const copyright = document.getElementById('copyright-goes-here');
-
 copyright.innerText = `© ${new Date().getFullYear()}`;

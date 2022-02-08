@@ -35,7 +35,34 @@ For an analogy let's look to [Manu Prakash](https://en.wikipedia.org/wiki/Manu_P
 
 Over-engineering a static "brochure" website as an SPA makes as much sense as hauling a generator out to areas with limited infrastructure to power an expensive electric centrifuge. You could get pretty much the same job done with a paper toy for a fraction of the overhead.
 
-The paperfuge's use of old tech saves money and increases accessibility. Coding a basic vanilla MPA saves time in development (goodbye babel/postcss/SSR config) and builds are fast (this site builds in less than 1.2 seconds). Plus, the text-only markdown nature of this site makes updating more accessible to me in the sense I can now add projects or blog posts even from my phone on GitHub if I want. Vanilla was the right tool for the job here.
+The paperfuge's use of old tech boosts frugality and accessibility. Coding a basic vanilla multi-page application (MPA) saves time in development (goodbye babel/postcss/SSR config) and builds are fast (this site builds in less than 1.2 seconds). The pages load fast because I'm not fetching any fancy webfonts, and I'm only using 14 lines of Javascript to `a)` hide outlines on clicked links while still preserving outlines for tab navigation, and `b)` add the current year in the footer copyright tag:
+
+```js
+/* all the JS in this site */
+
+function handleDown(e) {
+  e.target.closest('a').classList.add('mouse');
+}
+
+function handleBlur(e) {
+  e.target.closest('a').classList.remove('mouse');
+  document.activeElement.blur(); // for case of new tab
+}
+
+const links = document.querySelectorAll('a');
+
+// prevent focus box outline from appearing on clicked links
+links.forEach((a) => {
+  a.addEventListener('mousedown', handleDown);
+  a.addEventListener('blur', handleBlur);
+});
+
+// Add copyright date in footer
+const copyright = document.getElementById('copyright-goes-here');
+copyright.innerText = `© ${new Date().getFullYear()}`;
+```
+
+Yes I'm mixing arrow functions and es5 functions. I'm naughty.
 
 ## Content-first
 
@@ -54,7 +81,7 @@ Aiming for similar aesthetic, I opted for no hamburger nav, native webfonts, and
 
 Now I won't distract myself or visitors with glitz, so I can focus on content.
 
-## In conclusion
+## Therefore
 
 Switching from an SPA to MPA was the right choice for this static "brochure" style website. Hopefully the ease of content editing and lack of distracting style elements will have me updating this site more than once every two years, with more meaningful content.
 
