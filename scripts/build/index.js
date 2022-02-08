@@ -72,7 +72,11 @@ const postPages = postsDataSorted.map((p) => {
   const markdown = chopFm(
     fs.readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
   );
-  const excerpt = markdown.trim().slice(0, 150) + '...';
+  const excerpt =
+    markdown
+      .replace(/^>\s.+?\n/gm, '')
+      .trim()
+      .slice(0, 150) + '...';
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
