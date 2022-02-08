@@ -114,6 +114,10 @@ a.icon-link:focus {
   fill: var(--color-secondary);
 }
 
+img {
+  max-width: 100%;
+}
+
 code,
 pre,
 blockquote {

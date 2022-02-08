@@ -31,9 +31,9 @@
 - [The L Ships](https://github.com/clairefro/thelships)
   | On-chain SVG NFT (ERC-721) that generates random unique pairs of TV show characters
 
-- [Smalltalk forecaster](https://github.com/clairefro/smalltalk-forecast) | Entry in four-hour hackathon. Gets the weather for a given city and produces a forecast of the smalltalk you'll likely hear. Try it [here](https://clairefro.github.io/smalltalk-forecast/)
+- [Smalltalk forecaster](https://github.com/clairefro/smalltalk-forecast) | Entry in a four-hour hackathon. Gets the weather for a given city and produces a forecast of the smalltalk you'll likely hear. Try it [here](https://clairefro.github.io/smalltalk-forecast/)
 
-- [How much dough?](https://github.com/clairefro/how-much-dough) | Entry for four hour-hackathon. A basic currency conversion tool that uses loaves of bread to help you understand the value in terms of USD. Try it [here](https://clairefro.github.io/how-much-dough/)
+- [How much dough?](https://github.com/clairefro/how-much-dough) | Entry in a four hour-hackathon. A basic currency conversion tool that uses loaves of bread to help you understand the value in terms of USD. Try it [here](https://clairefro.github.io/how-much-dough/)
 
 - [Tones of the Universe](https://github.com/clairefro/tone-test) | Experiment to "hear" the constants `pi` and `phi` by mapping their digits across an octave, starting at 432Hz. Try it [here](https://clairefro.github.io/tone-test/)
 
@@ -65,6 +65,6 @@ Follow me on [Dev.to](https://dev.to/clairefro) and [Medium](https://medium.com/
 
 - [(Gen Ed Podcast) Transpacific Translation: From America to Japan to Peru Pt.1](https://open.spotify.com/episode/1nJAbfkejk3Q3omf29UqVt) & [Pt.2](https://open.spotify.com/episode/2rvmUgboc9JRVin5uTxmuo) | Targeting high school students who are undecided on their career path, I share lessons learned over my meandering career journey from interpreter in Japan to remote web developer. Themes include the importance of curiosity and failure.
 
-- [(CS Talks) Transitioning Into Tech](https://youtu.be/pF1HKE4ZoOk) | I am interviewed by Çetin Kaan Taşkıngenç of IEEE Yaşar Üniversitesi Öğrenci Kolu about alternative pathways into tech. Themes include entering tech for people with a background in liberal arts, and the benefits of coding bootcamps vs. universities
+- [(CS Talks) Transitioning Into Tech](https://youtu.be/pF1HKE4ZoOk) | I am interviewed by Çetin Kaan Taşkıngenç of IEEE Yaşar Üniversitesi Öğrenci Kolu about alternative pathways into tech. Themes include translating skills accross industries and the benefits of coding bootcamps vs. universities
 
-- [(FS Jam Podcast) Multilingual Documentation with Claire Froelich](https://fsjam.org/episodes/episode-26-multilingual-documentation-with-claire-froelich) | I discuss the trials, tribulations and wins of launching and maintaining an open source mutlilingual documentation website for [RedwoodJS](https://redwoodjs.com/) with host and friend Anthony Campolo.
+- [(FS Jam Podcast) Multilingual Documentation with Claire Froelich](https://fsjam.org/episodes/episode-26-multilingual-documentation-with-claire-froelich) | I discuss the trials, tribulations and wins of launching and maintaining an open source mutlilingual documentation website for [RedwoodJS](https://redwoodjs.com/), with host and friend Anthony Campolo.

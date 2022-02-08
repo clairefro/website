@@ -4,9 +4,10 @@ const util = require('util');
 const pug = require('pug');
 const marked = require('marked');
 const extract = require('extract-md-data');
-const { chopFm, validatePosts } = require('./utils');
+const slugify = require('slugify');
 const config = require('../../config');
 const package = require('../../package.json');
+const { chopFm, validatePosts } = require('./utils');
 const {
   mkdirIfNotExistsSync,
   copySync,
@@ -22,10 +23,11 @@ const staticDir = path.resolve(__dirname, '..', '..', config.staticDir);
 const data = extract(contentDir, contentDir, { omitContent: true });
 
 // Build dirs
-console.log('Building blog dir...');
+console.log('Building blog dirs...');
 
 mkdirIfNotExistsSync(distDir);
 clearDirSync(distDir);
+// Build nested routes
 mkdirIfNotExistsSync(path.resolve(distDir, 'blog'));
 mkdirIfNotExistsSync(path.resolve(distDir, 'blog/p'));
 
@@ -53,7 +55,7 @@ const projectsHtml = pug.renderFile(
   }
 );
 
-// Build blog pages
+// Get all blog post paths
 const postsData = data.filter((d) => d.relativeDir.match(/^blog\//));
 
 // Check published date and title exists on all blog posts frontmatter
@@ -67,7 +69,6 @@ console.log(
   `Building and writing ${postsDataSorted.length} blog post pages...`
 );
 const postPages = postsDataSorted.map((p) => {
-  // chop off frontmatter
   const markdown = chopFm(
     fs.readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
   );
@@ -81,14 +82,15 @@ const postPages = postsDataSorted.map((p) => {
       excerpt
     }
   );
-  const wwwLink = `/blog/p/${p.slug}`; // for intrasite linking
-  const outpath = `blog/p/${p.slug}.html`; // for dist Dir
+  const slug = slugify(p.fm.title, { lower: true, strict: true });
+  const wwwLink = `/blog/p/${slug}`; // for intrasite linking
+  const outpath = `blog/p/${slug}.html`; // for dist Dir
 
-  // write page to prevent storing tons of html blog pages in memory
+  // write page now to prevent storing tons of html blog pages in memory
   fs.writeFileSync(path.resolve(distDir, outpath), html);
 
   return {
-    slug: p.slug,
+    slug,
     wwwLink,
     outpath,
     title: p.fm.title,
@@ -105,20 +107,20 @@ const blogHtml = pug.renderFile(
 );
 
 // Write non-blog-post files
-const otherFilemap = {
+const notBlogPostsFilemap = {
   'index.html': homeHtml,
   'projects.html': projectsHtml,
   '404.html': notfoundHtml,
   'blog/index.html': blogHtml
 };
 
-console.log('Writing other web pages to dist dir...');
-Object.entries(otherFilemap).forEach(([filename, html]) => {
+console.log('Writing non-blog-post pages to dist dir...');
+Object.entries(notBlogPostsFilemap).forEach(([filename, html]) => {
   fs.writeFileSync(path.resolve(distDir, filename), html);
 });
 
 const builtPages = [
-  ...Object.keys(otherFilemap),
+  ...Object.keys(notBlogPostsFilemap),
   ...postPages.map((p) => p.outpath)
 ];
 
