@@ -35,7 +35,7 @@ For an analogy let's look to [Manu Prakash](https://en.wikipedia.org/wiki/Manu_P
 
 Over-engineering a static "brochure" website as an SPA makes as much sense as hauling a generator out to areas with limited infrastructure to power an expensive electric centrifuge. You could get pretty much the same job done with a paper toy for a fraction of the overhead.
 
-The paperfuge's use of old tech saves money and increases accessibility. Coding a basic vanilla MPA saves time in development (goodbye babel/postcss/SSR config) and builds are fast (this site builds in less than 1.2 seconds). Plus, the text-only markdown nature of this site makes updating more accessible to me in the sense I can now add projects or blog posts even from my phone on GitHub if I want.
+The paperfuge's use of old tech saves money and increases accessibility. Coding a basic vanilla MPA saves time in development (goodbye babel/postcss/SSR config) and builds are fast (this site builds in less than 1.2 seconds). Plus, the text-only markdown nature of this site makes updating more accessible to me in the sense I can now add projects or blog posts even from my phone on GitHub if I want. Vanilla was the right tool for the job here.
 
 ## Content-first
 
