@@ -84,7 +84,6 @@ a:visited {
   color: var(--color-secondary);
 }
 
-/* a:focus, */
 a:hover,
 a:active {
   border-bottom: 2px solid;

@@ -29,11 +29,11 @@ I became a dev in a time React was on every hiring manager's lips, so React is w
 
 Another actual flex is chosing the right tools for the job. My portfolio needs to be nothing more than the HTTP equivalent of a tri-fold brochure. It does not need the dynamism of an SPA.
 
-For an analogy let's look to [Manu Prakash](https://en.wikipedia.org/wiki/Manu_Prakash), a creative bioengineer and hero of mine. One of his projects is the [paperfuge](https://www.youtube.com/watch?v=pPePaKnYh2I) - a centrifuge modeled after a whirligig children's toy. Because the tool is light weight and hand-powered, it can be used for diagnostics in areas without electricity in order to detect diseases like as malaria or to separate blood plasma. The paperfuge gets the job done using old school technology. Did I mention it only costs 20 cents to make?
+As an analogy, let's look to my hero [Manu Prakash](https://en.wikipedia.org/wiki/Manu_Prakash)'s frugal [paperfuge](https://www.youtube.com/watch?v=pPePaKnYh2I) - a centrifuge modeled after a whirligig children's toy. Because the tool is light weight and hand-powered, it can be used for diagnostics in areas without electricity in order to detect diseases like as malaria or to separate blood plasma. The paperfuge gets the job done using old school technology. Did I mention it only costs 20 cents to make?
 
 ![$14,000 electric blood centrifuge compared to Manu Prakash's non-electric $0.20 paper centrifuge](https://user-images.githubusercontent.com/9841162/152917681-331b6f46-dab5-4506-9a80-7266d14c00be.png)
 
-Over-engineering a static "brochure" website as an SPA makes as much sense as hauling a generator out to areas with limited infrastructure to power an expensive electric centrifuge. You could get pretty much the same job done with a paper toy for a fraction of the overhead.
+Over-engineering a basic static website as an SPA makes as much sense as hauling a generator out to areas with limited infrastructure to power an expensive electric centrifuge. You could get pretty much the same job done with a paper toy for a fraction of the overhead.
 
 The paperfuge's use of old tech boosts frugality and accessibility. Coding a basic vanilla multi-page application (MPA) saves time in development (goodbye babel/postcss/SSR config) and builds are fast (this site builds in less than 1.2 seconds). The pages load fast because I'm not fetching any fancy webfonts, and I'm only using 2 lines of Javascript to add the current year in the footer copyright tag:
 
