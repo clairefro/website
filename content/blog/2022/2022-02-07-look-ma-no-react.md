@@ -38,7 +38,6 @@ Over-engineering a static "brochure" website as an SPA makes as much sense as ha
 The paperfuge's use of old tech boosts frugality and accessibility. Coding a basic vanilla multi-page application (MPA) saves time in development (goodbye babel/postcss/SSR config) and builds are fast (this site builds in less than 1.2 seconds). The pages load fast because I'm not fetching any fancy webfonts, and I'm only using 2 lines of Javascript to add the current year in the footer copyright tag:
 
 ```js
-// Add current copyright year in footer
 const copyright = document.getElementById('copyright-goes-here');
 
 copyright.innerText = `© ${new Date().getFullYear()}`;
