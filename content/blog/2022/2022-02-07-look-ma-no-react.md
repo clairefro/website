@@ -23,7 +23,7 @@ A developer needs a website to prove they can build a website. A new dev might f
 
 The old portfolio was one of the first websites I built after learning React. Note the unecessary animations that serve little more than to make you nauseous. Clearly I was trying hard to justify having used React in the first place. The flashiness was also overcompensating for the fact that as a new dev I had barely any projects to show yet.
 
-I became a dev in a time React was on every hiring manager's lips, so React is what I binge taught myself immediately after bootcamp in haste for a job. The reality is, React and Gatsby were bandaids over the fact that I didn't know how to code basic things back then, like my own file-based routing in Node or traditional HTML templating without JSX. The ease of deployment from Gatsby to Netlify was a bandaid over not being familiar with how to deploy any other way.
+I became a dev in a time React was on every hiring manager's lips, so React is what I taught myself immediately after bootcamp while scrambling for a job. The reality is, React and Gatsby were bandaids over the fact that I didn't know how to code basic things back then, like my own file-based routing in Node or traditional HTML templating without JSX. The ease of deployment from Gatsby to Netlify was a bandaid over not being familiar with how to deploy any other way.
 
 ## Static problems only _need_ static solutions
 
