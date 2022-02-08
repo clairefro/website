@@ -11,7 +11,7 @@ tags:
 >
 > _\- Conficius if he were a web dev_
 
-Welcome to my new site, brought to you by vanilla everything. No Javascript frameworks, CSS libraries or flashy animations. Just markdown, html templating, and plain old Javascript and CSS.
+Welcome to my new site, brought to you by vanilla everything. No Javascript frameworks, CSS libraries or flashy animations. Just markdown, html templating with `pug`, and plain old Javascript and CSS.
 
 This replaces my [old portfolio site](https://github.com/clairefro/portfolio), which was built with Gatsby/React. For reference, this is what it looked like.
 
