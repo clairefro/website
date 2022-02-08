@@ -58,6 +58,6 @@ Now I won't distract myself or visitors with glitz, so I can focus on content.
 
 Switching from an SPA to MPA was the right choice for this static "brochure" style website. Hopefully the ease of content editing and lack of distracting style elements will have me updating this site more than once every two years, with more meaningful content.
 
-This was also a chance for me to prove to myself I can indeed code a vanilla static MPA with all the bells and whistles I want, using my own build logic. Shoutout to [cannikan](https://github.com/cannikin) who piqued my interest in static site generators a while back when he showed me his own custom generator: [cameronjs](https://github.com/cannikin/cameronjs).
+This was also a chance for me to prove to myself I can indeed code a vanilla static MPA with all the bells and whistles I want, using my own build logic. Shoutout to [cannikin](https://github.com/cannikin) who piqued my interest in static site generators a while back when he showed me his own custom generator: [cameronjs](https://github.com/cannikin/cameronjs).
 
 To see how simple it is to generate your own vanilla static site, check out [code for this site](https://github.com/clairefro/website), namely the `build` script. Confucius might argue it could be even simpler.
