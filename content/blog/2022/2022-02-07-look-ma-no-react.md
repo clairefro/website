@@ -19,7 +19,7 @@ This replaces my [old portfolio site](https://github.com/clairefro/portfolio), w
 
 ## Modern frameworks are a false flex
 
-A developer needs a website to prove they can build a website. A new dev might feel tempted to "flex" their bleeding edge skills to the market by showing they can make websites with modern tools like React, Gatsby, Next, SCSS and Tailwind. In reality it is more of a flex in this SPA era to show you know how to make a website the old-fashioned way.
+A developer needs a website to prove they can build a website. A new dev might feel tempted to "flex" their bleeding edge skills to the market by showing they can make websites with modern tools like React, Gatsby, Next, headless CMS, SCSS and Tailwind. In reality it is more of a flex in this SPA era to show you know how to make a website the old-fashioned way.
 
 The old portfolio was one of the first websites I built after learning React. Note the unecessary animations that serve little more than to make you nauseous. Clearly I was trying hard to justify having used React in the first place. The flashiness was also overcompensating for the fact that as a new dev I had barely any projects to show yet.
 
