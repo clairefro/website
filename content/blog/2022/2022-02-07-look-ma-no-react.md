@@ -35,7 +35,7 @@ As an analogy, let's look to my hero [Manu Prakash](https://en.wikipedia.org/wik
 
 Over-engineering a basic static website as an SPA makes as much sense as hauling a generator out to areas with limited infrastructure to power an expensive electric centrifuge. You could get pretty much the same job done with a paper toy for a fraction of the overhead.
 
-The paperfuge's use of old tech boosts frugality and accessibility. Coding a basic vanilla multi-page application (MPA) saves time in development (goodbye babel/postcss/SSR config) and builds are fast (this site builds in less than 1.2 seconds). The pages load fast because I'm not fetching any fancy webfonts, and I'm only using 2 lines of Javascript to add the current year in the footer copyright tag:
+The paperfuge's use of old tech boosts frugality and accessibility. Coding a basic vanilla multi-page application (MPA) saves time in development (goodbye babel/postcss/SSR config) and builds are fast (this site builds in less than 1.2 seconds). The pages load fast because I'm not fetching any fancy webfonts, and I'm only using these 2 lines of Javascript to add the current year in the footer copyright tag:
 
 ```js
 const copyright = document.getElementById('copyright-goes-here');
