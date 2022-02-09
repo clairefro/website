@@ -29,7 +29,7 @@ I became a dev in a time React was on every hiring manager's lips, so React is w
 
 Another actual flex is chosing the right tools for the job. My portfolio needs to be nothing more than the HTTP equivalent of a tri-fold brochure. It does not need the dynamism of an SPA.
 
-As an analogy, let's look to my hero [Manu Prakash](https://en.wikipedia.org/wiki/Manu_Prakash)'s frugal [paperfuge](https://www.youtube.com/watch?v=pPePaKnYh2I) - a centrifuge modeled after a whirligig children's toy. Because the tool is light weight and hand-powered, it can be used for diagnostics in areas without electricity in order to detect diseases like as malaria or to separate blood plasma. The paperfuge gets the job done using old school technology. Did I mention it only costs 20 cents to make?
+As an analogy, let's look to my hero [Manu Prakash](https://en.wikipedia.org/wiki/Manu_Prakash)'s frugal [paperfuge](https://www.youtube.com/watch?v=pPePaKnYh2I) - a centrifuge modeled after a whirligig children's toy. Because the tool is light weight and hand-powered, it can be used for diagnostics in areas without electricity in order to detect diseases malaria or to separate blood plasma. The paperfuge gets the job done using old school technology. Did I mention it only costs 20 cents to make?
 
 ![$14,000 electric blood centrifuge compared to Manu Prakash's non-electric $0.20 paper centrifuge](https://user-images.githubusercontent.com/9841162/152917681-331b6f46-dab5-4506-9a80-7266d14c00be.png)
 
