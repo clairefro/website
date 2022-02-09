@@ -104,6 +104,7 @@ a.icon-link:active {
 .icon {
   fill: var(--color-primary-dark);
 }
+
 .icon:hover {
   fill: var(--color-secondary);
 }
