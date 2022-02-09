@@ -65,6 +65,7 @@ a {
 
 a {
   text-decoration: none;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 a:focus {
@@ -76,17 +77,15 @@ a:focus-visible {
   outline: 2px solid var(--color-primary);
 }
 
-a:link {
-  color: var(--color-secondary);
-}
-
+a:link,
 a:visited {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 a:hover,
 a:active {
   border-bottom: 2px solid;
+  color: var(--color-secondary);
 }
 
 a:active {
@@ -163,6 +162,7 @@ pre {
 
 #nav a {
   color: var(--color-secondary);
+  border-bottom: none;
   font-family: Trebuchet, sans-serif;
   font-size: inherit;
   font-weight: bold;
@@ -171,7 +171,7 @@ pre {
 .date {
   font-size: 0.75em;
   font-style: italic;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .mt-0 {
@@ -196,6 +196,9 @@ hr {
 #footer a:hover {
   border-bottom: none;
 }
+#footer a {
+  border-bottom: none;
+}
 
 #clicky-banner {
   background-color: transparent;
@@ -204,6 +207,7 @@ hr {
 #email-container {
   display: flex;
   align-items: center;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 #email-container img {
