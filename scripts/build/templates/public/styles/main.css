@@ -1,20 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
 /* Variables */
 :root {
-  /* Edit these raw RGB colors */
-  --color-bg: #9c3450;
-  --color-text: #fef8e6;
-  --color-semi-transparent-light: rgba(255, 255, 255, 0.75);
-  --color-primary-raw-rgb: 150, 70, 106;
-  --color-primary-dark-raw-rgb: 98, 46, 69;
-  --color-secondary-raw-rgb: 243, 198, 43;
-  --alpha: 0.2;
+  /* raw RGB colors */
+  --color-primary-raw-rgb: 243, 198, 43; /* yellow */
+  --color-text-raw-rgb: 254, 248, 230; /* light yellow */
+
   --border-radius: 6px;
 
-  /* Calculated */
+  /* Resolved colors */
+  --color-bg: #9c3450;
+  --color-text: rgb(var(--color-text-raw-rgb));
   --color-primary: rgb(var(--color-primary-raw-rgb));
-  --color-primary-mask: rgba(var(--color-primary-raw-rgb), var(--alpha));
-  --color-secondary: rgb(var(--color-secondary-raw-rgb));
-  --color-secondary-mask: rgba(var(--color-secondary-raw-rgb), var(--alpha));
+  --color-primary-semi-transparent: rgba(var(--color-primary-raw-rgb), 0.2);
+  --color-text-semi-transparent: rgba(var(--color-text-raw-rgb), 0.9);
+  --color-semi-transparent-light: rgba(255, 255, 255, 0.75);
+  --color-semi-transparent-dark: rgba(0, 0, 0, 0.3);
 }
 /* end Variables */
 
@@ -43,7 +43,9 @@
 
 body {
   background-color: var(--color-bg);
-  font-family: Trebuchet, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  /* font-family: 'Assistant', sans-serif; */
+  font-weight: 200;
   color: var(--color-text);
   font-size: 18px;
 }
@@ -54,8 +56,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-secondary);
-  font-family: Trebuchet, sans-serif;
+  color: var(--color-primary);
+  /* font-family: 'Trebuchet MS', sans-serif; */
+  font-family: sans-serif;
 }
 
 p,
@@ -65,7 +68,7 @@ a {
 
 a {
   text-decoration: none;
-  border-bottom: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 a:focus {
@@ -74,17 +77,18 @@ a:focus {
 
 /* For tab navigation */
 a:focus-visible {
-  outline: 2px solid var(--color-secondary);
+  outline: 2px solid var(--color-primary);
 }
 
 a:link,
 a:visited {
-  color: var(--color-secondary);
-  border-bottom: 2px solid var(--color-secondary);
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 a:active {
   color: #fff;
+  border-bottom-color: #fff;
 }
 
 a.icon-link:hover,
@@ -101,7 +105,7 @@ a.icon-link:active {
 }
 
 .icon:hover {
-  fill: var(--color-secondary);
+  fill: var(--color-primary);
 }
 
 img {
@@ -126,11 +130,11 @@ pre {
 }
 
 blockquote {
-  background-color: var(--color-secondary-mask);
+  background-color: var(--color-semi-transparent-dark);
   padding: 0.5rem 1rem;
   margin: 0;
   border-radius: var(--border-radius);
-  border-left: 5px solid var(--color-secondary);
+  border-left: 5px solid var(--color-primary);
 }
 
 /* Code highlighting overrides */
@@ -139,12 +143,12 @@ pre code.hljs {
 }
 
 code {
-  background-color: var(--color-secondary-mask);
-  color: var(--color-secondary);
+  background-color: var(--color-primary-semi-transparent);
+  color: var(--color-primary);
 }
 
 pre {
-  background-color: var(--color-secondary-mask);
+  background-color: var(--color-text-semi-transparent);
 }
 
 /* Components */
@@ -184,7 +188,7 @@ pre {
 .date {
   font-size: 0.75em;
   font-style: italic;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--color-semi-transparent-light);
 }
 
 .mt-0 {
@@ -199,6 +203,28 @@ hr {
   max-width: 50px;
   border-top: solid 1px;
   margin: 2rem auto;
+}
+
+#greeter {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+}
+
+#greeter .avatar {
+  max-height: 140px;
+}
+
+#find-me-on a {
+  color: var(--color-text);
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+#find-me-on a:before {
+  content: ' > ';
+  margin-left: 5px;
+  text-decoration: none;
 }
 
 #footer {
