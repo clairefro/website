@@ -200,9 +200,11 @@ pre {
 }
 
 hr {
-  max-width: 50px;
-  border-top: solid 1px;
-  margin: 2rem auto;
+  border: none;
+  height: 1px;
+  color: var(--color-semi-transparent-light); /* IE */
+  background-color: var(--color-semi-transparent-light);
+  margin: 2rem 0;
 }
 
 #greeter {
