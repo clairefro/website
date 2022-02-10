@@ -1,19 +1,18 @@
 /* Variables */
 :root {
   /* Edit these raw RGB colors */
-  --color-bg: #fff;
-  --color-text-light: rgb(55, 66, 67);
-  --color-text-dark: rgb(36, 44, 45);
+  --color-bg: #9c3450;
+  --color-text: #fef8e6;
+  --color-semi-transparent-light: rgba(255, 255, 255, 0.75);
   --color-primary-raw-rgb: 150, 70, 106;
   --color-primary-dark-raw-rgb: 98, 46, 69;
-  --color-secondary-raw-rgb: 255, 175, 0;
+  --color-secondary-raw-rgb: 243, 198, 43;
   --alpha: 0.2;
   --border-radius: 6px;
 
   /* Calculated */
   --color-primary: rgb(var(--color-primary-raw-rgb));
   --color-primary-mask: rgba(var(--color-primary-raw-rgb), var(--alpha));
-  --color-primary-dark: rgb(var(--color-primary-dark-raw-rgb));
   --color-secondary: rgb(var(--color-secondary-raw-rgb));
   --color-secondary-mask: rgba(var(--color-secondary-raw-rgb), var(--alpha));
 }
@@ -23,7 +22,7 @@
 
 .page {
   max-width: 650px;
-  margin-left: 3rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -43,9 +42,10 @@
 /* General */
 
 body {
-  font-family: Georgia, serif;
-  color: var(--color-text-light);
-  font-size: 16px;
+  background-color: var(--color-bg);
+  font-family: Trebuchet, sans-serif;
+  color: var(--color-text);
+  font-size: 18px;
 }
 
 h1,
@@ -54,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-text-dark);
+  color: var(--color-secondary);
   font-family: Trebuchet, sans-serif;
 }
 
@@ -65,7 +65,7 @@ a {
 
 a {
   text-decoration: none;
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-secondary);
 }
 
 a:focus {
@@ -74,22 +74,17 @@ a:focus {
 
 /* For tab navigation */
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-secondary);
 }
 
 a:link,
 a:visited {
-  color: var(--color-primary);
-}
-
-a:hover,
-a:active {
-  border-bottom: 2px solid;
   color: var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
 }
 
 a:active {
-  color: var(--color-primary);
+  color: #fff;
 }
 
 a.icon-link:hover,
@@ -102,7 +97,7 @@ a.icon-link:active {
 }
 
 .icon {
-  fill: var(--color-primary-dark);
+  fill: var(--color-semi-transparent-light);
 }
 
 .icon:hover {
@@ -133,6 +128,7 @@ pre {
 blockquote {
   background-color: var(--color-secondary-mask);
   padding: 0.5rem 1rem;
+  margin: 0;
   border-radius: var(--border-radius);
   border-left: 5px solid var(--color-secondary);
 }
@@ -143,7 +139,8 @@ pre code.hljs {
 }
 
 code {
-  background-color: var(--color-primary-mask);
+  background-color: var(--color-secondary-mask);
+  color: var(--color-secondary);
 }
 
 pre {
@@ -151,22 +148,37 @@ pre {
 }
 
 /* Components */
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #nav ul {
   list-style: none;
   display: flex;
   padding-left: 0;
 }
 
+#nav .menu a {
+  font-weight: normal;
+}
+
 #nav li {
-  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 #nav a {
-  color: var(--color-secondary);
+  color: var(--color-text);
   border-bottom: none;
   font-family: Trebuchet, sans-serif;
   font-size: inherit;
   font-weight: bold;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 2px solid var(--color-text);
 }
 
 .date {
@@ -192,6 +204,10 @@ hr {
 #footer {
   font-size: 0.9rem;
   padding-bottom: 1rem;
+}
+#footer,
+#footer a {
+  color: var(--color-semi-transparent-light);
 }
 
 #footer a:hover {
