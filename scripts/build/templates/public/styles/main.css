@@ -33,6 +33,12 @@
     margin: 0 auto;
     font-size: 0.85rem;
   }
+  #greeter .avatar {
+    margin: 2rem auto;
+  }
+  #greeter img {
+    max-height: 100px !important;
+  }
 }
 
 .footer-spacer {
@@ -209,8 +215,13 @@ hr {
 
 #greeter {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap-reverse;
   align-items: center;
+}
+
+#greeter .textbox {
+  max-width: 500px;
 }
 
 #greeter .avatar {
