@@ -33,7 +33,7 @@
     font-size: 0.85rem;
   }
   #greeter .avatar {
-    margin: 2rem auto;
+    margin: 0 auto;
   }
   #greeter img {
     max-height: 100px !important;
