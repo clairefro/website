@@ -87,10 +87,6 @@ ul.no-bullets {
   list-style: none;
   padding-left: 0;
 }
-.muted-tone-links a {
-  color: var(--color-text);
-  border-bottom-color: var(--color-text);
-}
 
 .icon {
   max-width: 1rem;
