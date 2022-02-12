@@ -10,9 +10,9 @@ block head
   meta(property='og:title', content='blog | clairefro')
 block content
   h1 Blog
-  ul.no-bullets
+  ul.no-bullets.muted-tones
     each postPage in postPages
       li
-        p.mb-0 
+        p.mb-025 
           a(href=postPage.wwwLink) #{ postPage.title }
         p.mt-0.date #{ ' ' }#{ postPage.published }
