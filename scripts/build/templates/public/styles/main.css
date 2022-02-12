@@ -33,7 +33,6 @@
 body {
   background-color: var(--color-bg);
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  /* font-family: 'Assistant', sans-serif; */
   font-weight: 200;
   color: var(--color-text);
   font-size: 18px;
@@ -46,7 +45,6 @@ h4,
 h5,
 h6 {
   color: var(--color-primary);
-  /* font-family: 'Trebuchet MS', sans-serif; */
   font-family: sans-serif;
 }
 
@@ -83,6 +81,15 @@ a:active {
 a.icon-link:hover,
 a.icon-link:active {
   border-bottom: none;
+}
+
+ul.no-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+.muted-tone-links a {
+  color: var(--color-text);
+  border-bottom-color: var(--color-text);
 }
 
 .icon {
@@ -194,6 +201,21 @@ pre {
 .vertically-centered {
   display: flex;
   align-items: center;
+}
+
+#projects-page ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#projects-page h3 {
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 200;
+  margin-bottom: 0;
+}
+#projects-page p {
+  margin-top: 0;
 }
 
 hr {
