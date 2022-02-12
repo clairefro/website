@@ -31,7 +31,7 @@ Another actual flex is choosing the right tools for the job. My portfolio needs 
 
 As an analogy, let's look to my hero [Manu Prakash](https://en.wikipedia.org/wiki/Manu_Prakash)'s frugal [paperfuge](https://www.youtube.com/watch?v=pPePaKnYh2I) - a centrifuge modeled after a whirligig children's toy. Because the tool is light weight and hand-powered, it can be used for diagnostics in areas without electricity in order to detect diseases malaria or to separate blood plasma. The paperfuge gets the job done using old school technology. Did I mention it only costs 20 cents to make?
 
-![$14,000 electric blood centrifuge compared to Manu Prakash's non-electric $0.20 paper centrifuge](https://user-images.githubusercontent.com/9841162/152917681-331b6f46-dab5-4506-9a80-7266d14c00be.png)
+![$14,000 electric blood centrifuge compared to Manu Prakash's non-electric $0.20 paper centrifuge](https://user-images.githubusercontent.com/9841162/153718817-7ee245a5-fdb6-477c-993f-f2beb4253aaa.png)
 
 Over-engineering a basic static website as an SPA makes as much sense as hauling a generator out to areas with limited infrastructure to power an expensive electric centrifuge. You could get pretty much the same job done with a paper toy for a fraction of the overhead.
 
