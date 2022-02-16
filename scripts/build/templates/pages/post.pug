@@ -12,6 +12,6 @@ block head
   meta(property='og:title', content=post.fm.title + ' | blog | clairefro')
 
 block content
-  h1.mb-0 #{ post.fm.title }
-  p.mt-0.date  #{ post.fm.published }
+  p.date  #{ post.fm.published }
+  h1 #{ post.fm.title }
   div!= marked.parse(markdown)
