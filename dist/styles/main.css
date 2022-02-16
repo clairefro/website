@@ -370,7 +370,7 @@ hr {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 666px) {
   .page {
     margin: 0 auto;
     font-size: 0.85rem;
