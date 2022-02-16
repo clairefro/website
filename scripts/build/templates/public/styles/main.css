@@ -375,13 +375,13 @@ hr {
     margin: 0 auto;
     font-size: 0.85rem;
   }
+
   #greeter .avatar {
     margin-bottom: 2rem;
   }
+
   #greeter .textbox {
     padding-right: 0;
     max-width: none;
-    /* text-align: center; */
-    /* margin: 0 auto; */
   }
 }

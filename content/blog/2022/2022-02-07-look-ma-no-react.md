@@ -47,7 +47,7 @@ copyright.innerText = `© ${new Date().getFullYear()}`;
 
 Then there is aesthetics. Most useful sites I love have barely any style or dynamism. Think Wikipedia, HackerNews, Craigslist, and other forums that look like a timewarp to the 90's. Why are these so popular? Answer: What they lack in glitz they make up for in practical content.
 
-Aiming for similar aesthetic, I opted for no hamburger nav, native webfonts, and a two-color theme inspired by a baked Japanese sweet potato. The simple layout makes this entire site responsive on all devices with this single media query:
+Aiming for similar aesthetic, I opted for no hamburger nav, native webfonts, and a two-color theme inspired by a baked Japanese sweet potato. The simple layout makes this entire site responsive on all devices with this single\* media query:
 
 ```css
 @media (max-width: 650px) {
@@ -67,3 +67,5 @@ Switching from an SPA to MPA was the right choice for this static "brochure" sty
 This was also a chance for me to prove to myself I can indeed code a vanilla static MPA with all the bells and whistles I want, using my own build logic. Shoutout to [cannikin](https://github.com/cannikin) who piqued my interest in static site generators a while back when he showed me his own custom generator: [cameronjs](https://github.com/cannikin/cameronjs).
 
 To see how simple it is to generate your own vanilla static site, check out the [code for this site](https://github.com/clairefro/website), namely the `build` script. Confucius might argue it could be even simpler.
+
+_\* Update 2022-02-15: Since publishing I have updated the CSS styling to make the website look even more like a sweet potato. There are now two media queries._
