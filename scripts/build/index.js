@@ -7,7 +7,7 @@ const extract = require('extract-md-data');
 const slugify = require('slugify');
 const config = require('../../config');
 const package = require('../../package.json');
-const { chopFm, validatePosts } = require('./utils');
+const { chopFm, validatePosts, humanizeDate, getExcerpt } = require('./utils');
 const {
   mkdirIfNotExistsSync,
   copySync,
@@ -72,20 +72,24 @@ const postPages = postsDataSorted.map((p) => {
   const markdown = chopFm(
     fs.readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
   );
-  const excerpt =
-    markdown
-      .replace(/^>\s.+?\n/gm, '')
-      .trim()
-      .slice(0, 150) + '...';
+
+  const excerpt = getExcerpt(markdown);
+
+  const post = {
+    ...p,
+    fm: { ...p.fm, published: humanizeDate(p.fm.published) }
+  };
+
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
-      post: p,
+      post,
       marked,
       markdown,
       excerpt
     }
   );
+
   const slug = slugify(p.fm.title, { lower: true, strict: true });
   const wwwLink = `/blog/p/${slug}`; // for intrasite linking
   const outpath = `blog/p/${slug}.html`; // for dist Dir
@@ -98,7 +102,7 @@ const postPages = postsDataSorted.map((p) => {
     wwwLink,
     outpath,
     title: p.fm.title,
-    published: p.fm.published
+    published: humanizeDate(p.fm.published)
   };
 });
 
