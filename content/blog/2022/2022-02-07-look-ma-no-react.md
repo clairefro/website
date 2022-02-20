@@ -47,7 +47,7 @@ copyright.innerText = `© ${new Date().getFullYear()}`;
 
 Then there is aesthetics. Most useful sites I love have barely any style or dynamism. Think Wikipedia, HackerNews, Craigslist, and other forums that look like a timewarp to the 90's. Why are these so popular? Answer: What they lack in glitz they make up for in practical content.
 
-Aiming for similar aesthetic, I opted for no hamburger nav, native webfonts, and a two-color theme inspired by a baked Japanese sweet potato. The simple layout makes this entire site responsive on all devices with this single\* media query:
+Aiming for similar aesthetic, I opted for no hamburger nav, native webfonts, and a minimalistic color theme inspired by a baked Japanese sweet potato. The simple layout makes this entire site responsive on all devices with this single\* media query:
 
 ```css
 @media (max-width: 650px) {
@@ -68,4 +68,4 @@ This was also a chance for me to prove to myself I can indeed code a vanilla sta
 
 To see how simple it is to generate your own vanilla static site, check out the [code for this site](https://github.com/clairefro/website), namely the `build` script. Confucius might argue it could be even simpler.
 
-_\* Update 2022-02-15: Since publishing I have updated the CSS styling to make the website look even more like a sweet potato. There are now two media queries._
+_\* Update Feb 15, 2022: Since publishing I have updated the CSS styling to make the website look even more like a sweet potato. There are now two media queries._
