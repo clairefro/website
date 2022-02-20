@@ -284,6 +284,7 @@ hr {
 #footer {
   font-size: 0.9rem;
   padding-bottom: 1rem;
+  color: var(--color-text-semi-transparent-80);
 }
 
 #footer-content,
