@@ -80,8 +80,6 @@ A plugin that works around the limitations of a pre-fabbed e-commerce site to gi
 
 ## Tutorials
 
-Follow me on [Dev.to](https://dev.to/clairefro) and [Medium](https://medium.com/@clairefroelich) for more
-
 ### [Automate daily Tweets with Postman and the Twitter API v2](https://dev.to/clairefro/automate-daily-tweets-with-postman-and-the-twitter-api-v2-4gg9)
 
 ### [Quick HTML/CSS hack for prettier Japanese titles](https://medium.com/@clairefroelich/quick-html-css-hack-for-prettier-japanese-titles-fb4ce3d41309)
@@ -93,6 +91,8 @@ Follow me on [Dev.to](https://dev.to/clairefro) and [Medium](https://medium.com/
 ### [Automation with Google Apps Script and APIs](https://www.youtube.com/watch?v=2RJeinkiGKU)
 
 ### [Intro to Git and GitHub](https://www.youtube.com/watch?v=JD1RRPVb-C8)
+
+### Follow me on [Dev.to](https://dev.to/clairefro) and [Medium](https://medium.com/@clairefroelich) for more
 
 ## Conversations
 
