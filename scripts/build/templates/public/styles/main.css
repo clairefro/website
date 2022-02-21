@@ -231,6 +231,7 @@ pre {
 
 #projects-page p {
   margin-top: 0;
+  color: var(--color-text-semi-transparent-80);
 }
 
 #projects-page h2 {
