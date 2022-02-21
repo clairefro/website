@@ -70,7 +70,8 @@ h6 {
 }
 
 p,
-a {
+a,
+li {
   line-height: 190%;
 }
 
