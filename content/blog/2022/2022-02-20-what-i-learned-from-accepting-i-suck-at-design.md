@@ -68,10 +68,6 @@ The internet is full of unsolicited advice you didn't know you needed - learning
 
 I'm super happy with the new polished look. Most importantly it's still simple: all vanilla CSS baby!
 
-<<<<<<< HEAD
 I'm not sure what I did to deserve Sanket's good vibes, talent and patience as we collaborated outside of work on this design project, but I am certainly grateful for the whole experience that left me armed with better practices and pushed me to think beyond my stubborness. I'm happy that he seems to have enjoyed the challenge of making a cohesive potato theme.
-=======
-I'm not sure what I did to deserve Sanket's good vibes, talent and patience as we collaborated outside of work on this design project, but I am certainly grateful for the whole experience that left me armed with better practices and pushed my to think beyond my stubborness. I'm happy that he seems to have enjoyed the challenge of making a cohesive potato theme.
->>>>>>> 4660223fa604f283c4e37d8cf0c74d3cb3074c41
 
 If you're curious to know more about Sanket and his goings-on, feel free to keep up with him on [his Twitter](https://twitter.com/sanketpath) and [his blog](https://blog.sanketpathak.com/)!
