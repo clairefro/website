@@ -10,11 +10,14 @@ Marketing site for my self-published children's book about farting deer
 
 So meta. Custom static site generation with vanilla everything.
 
-### [learn.redwoodjs.com](https://learn.redwoodjs.com/docs/tutorial/welcome-to-redwood)
+### [learn.redwoodjs.com](https://github.com/redwoodjs/learn.redwoodjs.com) - DEPRECATED 🪦 
 
 A multilingual tutorial site for RedwoodJS, powered by crowd-sourced translations
 
 ## Chrome extensions
+
+### [aribotle](https://github.com/clairefro/aribotle)
+A chrome extension for detecting logical fallacies in web text
 
 ### [blockify](https://github.com/clairefro/blockify)
 
@@ -25,6 +28,8 @@ Spotify ad blocker for Chrome that plays soothing music in place of jarring ads
 A hacky solution for hiding sensitive environment variables in Postman while livestreaming
 
 ## Tools
+### [aimlazy](https://github.com/clairefro/aimlazy-demo)
+Productivity tool for prompting an LLM from the command line. Also can write files
 
 ### [Discord Spam Blocker](https://github.com/clairefro/discord-spam-blocker)
 
@@ -79,6 +84,8 @@ A bilingual and interactive view to learn about and fly between Japan and Oregon
 A plugin that works around the limitations of a pre-fabbed e-commerce site to give this export company the ability to customize their international shipping information via Airtable. [code](https://github.com/clairefro/fhwl-shipping-info)
 
 ## Tutorials
+
+### [Make a CLI tool with Node and OpenAI to boost your productivity](https://www.youtube.com/watch?v=nUnKos5xzOM)
 
 ### [Automate daily Tweets with Postman and the Twitter API v2](https://dev.to/clairefro/automate-daily-tweets-with-postman-and-the-twitter-api-v2-4gg9)
 
