@@ -1,19 +1,5 @@
 # Projects
 
-## Websites
-
-### [Power of Vegetables](https://www.power-of-vegetables.com/)
-
-Marketing site for my self-published children's book about farting deer
-
-### [This website](https://github.com/clairefro/website)
-
-So meta. Custom static site generation with vanilla everything.
-
-### [learn.redwoodjs.com](https://github.com/redwoodjs/learn.redwoodjs.com) - DEPRECATED 🪦 
-
-A multilingual tutorial site for RedwoodJS, powered by crowd-sourced translations
-
 ## Tools
 ### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin)
 
@@ -47,6 +33,20 @@ Spotify ad blocker for Chrome that plays soothing music in place of jarring ads
 ### [pm-shhh](https://github.com/clairefro/pm-shhh)
 
 A hacky solution for hiding sensitive environment variables in Postman while livestreaming
+
+## Websites
+
+### [Power of Vegetables](https://www.power-of-vegetables.com/)
+
+Marketing site for my self-published children's book about farting deer
+
+### [This website](https://github.com/clairefro/website)
+
+So meta. Custom static site generation with vanilla everything.
+
+### [learn.redwoodjs.com](https://github.com/redwoodjs/learn.redwoodjs.com) - DEPRECATED 🪦 
+
+A multilingual tutorial site for RedwoodJS, powered by crowd-sourced translations
 
 ## Fun
 
