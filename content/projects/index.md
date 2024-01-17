@@ -28,7 +28,12 @@ Spotify ad blocker for Chrome that plays soothing music in place of jarring ads
 A hacky solution for hiding sensitive environment variables in Postman while livestreaming
 
 ## Tools
+### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin)
+
+AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.  
+
 ### [aimlazy](https://github.com/clairefro/aimlazy-demo)
+
 Productivity tool for prompting an LLM from the command line. Also can write files
 
 ### [Discord Spam Blocker](https://github.com/clairefro/discord-spam-blocker)
