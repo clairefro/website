@@ -14,19 +14,6 @@ So meta. Custom static site generation with vanilla everything.
 
 A multilingual tutorial site for RedwoodJS, powered by crowd-sourced translations
 
-## Chrome extensions
-
-### [aribotle](https://github.com/clairefro/aribotle)
-A chrome extension for detecting logical fallacies in web text
-
-### [blockify](https://github.com/clairefro/blockify)
-
-Spotify ad blocker for Chrome that plays soothing music in place of jarring ads
-
-### [pm-shhh](https://github.com/clairefro/pm-shhh)
-
-A hacky solution for hiding sensitive environment variables in Postman while livestreaming
-
 ## Tools
 ### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin)
 
@@ -47,6 +34,19 @@ Discord bot template that allows servers to role-gate their channels and approve
 ### [extract-md-data](https://www.npmjs.com/package/extract-md-data)
 
 `npm` library util for building light-weight static site generators based on markdown files
+
+## Chrome extensions
+
+### [aribotle](https://github.com/clairefro/aribotle)
+A chrome extension for detecting logical fallacies in web text
+
+### [blockify](https://github.com/clairefro/blockify)
+
+Spotify ad blocker for Chrome that plays soothing music in place of jarring ads
+
+### [pm-shhh](https://github.com/clairefro/pm-shhh)
+
+A hacky solution for hiding sensitive environment variables in Postman while livestreaming
 
 ## Fun
 
