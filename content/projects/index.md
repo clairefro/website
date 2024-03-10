@@ -1,9 +1,14 @@
 # Projects
 
 ## Tools
-### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin)
 
-AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.  
+### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin) (Obsidian plugin)
+
+AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.
+
+### [Etymology Lookup](https://github.com/clairefro/obsidian-plugin-etymology-lookup) (Obsidian plugin)
+
+Get etymology terms for words in your notes in one click, from [Online Etymology Dictionary](https://www.etymonline.com/)
 
 ### [aimlazy](https://github.com/clairefro/aimlazy-demo)
 
@@ -24,6 +29,7 @@ Discord bot template that allows servers to role-gate their channels and approve
 ## Chrome extensions
 
 ### [aribotle](https://github.com/clairefro/aribotle)
+
 A chrome extension for detecting logical fallacies in web text
 
 ### [blockify](https://github.com/clairefro/blockify)
@@ -44,7 +50,7 @@ Marketing site for my self-published children's book about farting deer
 
 So meta. Custom static site generation with vanilla everything.
 
-### [learn.redwoodjs.com](https://github.com/redwoodjs/learn.redwoodjs.com) - DEPRECATED 🪦 
+### [learn.redwoodjs.com](https://github.com/redwoodjs/learn.redwoodjs.com) - DEPRECATED 🪦
 
 A multilingual tutorial site for RedwoodJS, powered by crowd-sourced translations
 
