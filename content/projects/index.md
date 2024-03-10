@@ -8,7 +8,7 @@ AI-powered journaling plugin for your Obsidian notes, inspired by cognitive beha
 
 ### [Etymology Lookup](https://github.com/clairefro/obsidian-plugin-etymology-lookup) (Obsidian plugin)
 
-Get etymology terms for words in your notes in one click, from [Online Etymology Dictionary](https://www.etymonline.com/)
+Get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
 
 ### [aimlazy](https://github.com/clairefro/aimlazy-demo)
 
@@ -24,7 +24,11 @@ Discord bot template that allows servers to role-gate their channels and approve
 
 ### [extract-md-data](https://www.npmjs.com/package/extract-md-data)
 
-`npm` library util for building light-weight static site generators based on markdown files
+`npm` library for building light-weight static site generators based on markdown files
+
+### [etymo-js](https://www.npmjs.com/package/etymo-js)
+
+`npm` library for looking up English etymology in Node and the browser, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
 
 ## Chrome extensions
 
