@@ -96,7 +96,7 @@ A bilingual and interactive view to learn about and fly between Japan and Oregon
 
 ### ["From Hokkaido with Love" international shipping widget](https://www.from-hokkaido-with-love.com/fhwl-shipping-guide.html)
 
-A plugin that works around the limitations of a pre-fabbed e-commerce site to give this export company the ability to customize their international shipping information via Airtable. [code](https://github.com/clairefro/fhwl-shipping-info)
+A plugin that works around the limitations of a pre-fabbed e-commerce site to give this small business the ability to customize their international shipping information via Airtable. [code](https://github.com/clairefro/fhwl-shipping-info)
 
 ## Tutorials
 
