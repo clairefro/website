@@ -1,6 +1,9 @@
 # Projects
 
-## Tools
+## Featured
+
+### [Stack Overflow Simulator](https://sosimulator.xyz/) ([demo](https://x.com/clairefroe/status/1831773905343938889), [code](https://github.com/clairefro/sos-client))
+Relive the good old days of asking for help and being told to Read the F***ing manual. 
 
 ### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin) (Obsidian plugin)
 
@@ -10,9 +13,16 @@ AI-powered journaling plugin for your Obsidian notes, inspired by cognitive beha
 
 Get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
 
-### [aimlazy](https://github.com/clairefro/aimlazy-demo)
+## Libraries
+### [extract-md-data](https://www.npmjs.com/package/extract-md-data)
 
-Productivity tool for prompting an LLM from the command line. Also can write files
+`npm` library for building light-weight static site generators based on markdown files
+
+### [etymo-js](https://www.npmjs.com/package/etymo-js)
+
+`npm` library for looking up English etymology in Node and the browser, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
+
+## Discord 
 
 ### [Discord Spam Blocker](https://github.com/clairefro/discord-spam-blocker)
 
@@ -22,13 +32,12 @@ Discord bot template that protects servers from typosquatting nitro scam attacks
 
 Discord bot template that allows servers to role-gate their channels and approve new members via a emoji votes on applications. Originally built for Chainforest DAO.
 
-### [extract-md-data](https://www.npmjs.com/package/extract-md-data)
+## CLI
 
-`npm` library for building light-weight static site generators based on markdown files
+### [aimlazy](https://github.com/clairefro/aimlazy-demo)
 
-### [etymo-js](https://www.npmjs.com/package/etymo-js)
+Productivity tool for prompting an LLM from the command line. Also can write files
 
-`npm` library for looking up English etymology in Node and the browser, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
 
 ## Chrome extensions
 
