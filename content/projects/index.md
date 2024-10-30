@@ -26,11 +26,11 @@ Get etymology terms for words in your notes in one click, using data from [Onlin
 
 ### [Discord Spam Blocker](https://github.com/clairefro/discord-spam-blocker)
 
-Discord bot template that protects servers from typosquatting nitro scam attacks
+Discord bot template that protects servers from typosquatting scam attacks
 
 ### [toucan](https://github.com/clairefro/toucan)
 
-Discord bot template that allows servers to role-gate their channels and approve new members via a emoji votes on applications. Originally built for Chainforest DAO.
+Discord bot that allows servers to role-gate their channels and approve new members via a emoji votes on applications. Originally built for Chainforest DAO.
 
 ## CLI
 
@@ -51,7 +51,7 @@ Spotify ad blocker for Chrome that plays soothing music in place of jarring ads
 
 ### [pm-shhh](https://github.com/clairefro/pm-shhh)
 
-A hacky solution for hiding sensitive environment variables in Postman while livestreaming
+Hides sensitive environment variables in Postman while livestreaming
 
 ## Websites
 
@@ -63,27 +63,19 @@ Marketing site for my self-published children's book about farting deer
 
 So meta. Custom static site generation with vanilla everything.
 
-### [learn.redwoodjs.com](https://github.com/redwoodjs/learn.redwoodjs.com) - DEPRECATED 🪦
+### [learn.redwoodjs.com](https://github.com/redwoodjs/learn.redwoodjs.com) - DEPRECATED 🪦 - [outcomes](https://community.redwoodjs.com/t/announcement-ending-the-tutorial-translation-project-for-now/2931)
 
 A multilingual tutorial site for RedwoodJS, powered by crowd-sourced translations
 
-## Fun
-
-### [Am I Saying it Right?](https://clairefro.github.io/am-i-saying-it-right/)
-
-Simple web app for checking your pronouncing of words in various langauges (check out [my tutorial](https://levelup.gitconnected.com/if-web-apps-could-talk-intro-to-the-web-speech-api-c9f7e0e83aff?gi=c885a4f82128) to make your own). Try it [here](https://clairefro.github.io/am-i-saying-it-right/)
+## Fun old stuff
 
 ### [Inspirational Poster Maker](https://github.com/clairefro/inspiration-poster-maker)
 
-Entry in a four-hour hackathon. Make Inspirational posters for your home office in seconds and export them for printing. Try it [here](https://clairefro.github.io/inspiration-poster-maker/)
+Entry in a four-hour hackathon. Make corny inspirational posters for your home office in seconds and export them for printing. Try it [here](https://clairefro.github.io/inspiration-poster-maker/)
 
 ### [The L Ships](https://github.com/clairefro/thelships)
 
-On-chain SVG NFT (ERC-721) that generates random unique pairs of TV show characters
-
-### [Smalltalk forecaster](https://github.com/clairefro/smalltalk-forecast)
-
-Entry in a four-hour hackathon. Gets the weather for a given city and produces a forecast of the smalltalk you'll likely hear. Try it [here](https://clairefro.github.io/smalltalk-forecast/)
+On-chain SVG NFT (ERC-721) that generates random unique pairs of TV show characters. Brand building concept. 
 
 ### [How much dough?](https://github.com/clairefro/how-much-dough)
 
@@ -93,9 +85,9 @@ Entry in a four hour-hackathon. A basic currency conversion tool that uses loave
 
 Experiment to "hear" the constants `pi` and `phi` by mapping their digits across an octave, starting at 432Hz. Try it [here](https://clairefro.github.io/tone-test/)
 
-### [nftea](https://github.com/clairefro/nftea)
+### [Am I Saying it Right?](https://clairefro.github.io/am-i-saying-it-right/)
 
-A generative art project that generates random configurations of tea leaves at the bottom of a mug. Divine the future with BS.
+One of the first things I built when I taught myself to code. Checks your pronouncing of words in various langauges without AI using the Web Speech API (check out [my tutorial](https://levelup.gitconnected.com/if-web-apps-could-talk-intro-to-the-web-speech-api-c9f7e0e83aff?gi=c885a4f82128) to make your own). Try it [here](https://clairefro.github.io/am-i-saying-it-right/)
 
 ## Widgets
 
