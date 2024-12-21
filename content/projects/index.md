@@ -9,10 +9,6 @@ Relive the good old days of asking for help and being told to Read the F***ing m
 
 AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.
 
-### [Chronos Timeline](https://github.com/clairefro/obsidian-plugin-chronos) (Obsidian plugin)
-
-Render interactive timelines in your notes from markdown
-
 ### [Etymology Lookup](https://github.com/clairefro/obsidian-plugin-etymology-lookup) (Obsidian plugin)
 
 Get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
