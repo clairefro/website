@@ -3,7 +3,12 @@
 ## Featured
 
 ### [Stack Overflow Simulator](https://sosimulator.xyz/) ([demo](https://x.com/clairefroe/status/1831773905343938889), [code](https://github.com/clairefro/sos-client))
-Relive the good old days of asking for help and being told to Read the F***ing manual. 
+
+Relive the good old days of asking for help and being told to Read the F\*\*\*ing manual.
+
+### [Chronos Timeline](https://github.com/clairefro/obsidian-plugin-chronos) (Obsidian plugin)
+
+Render interactive timelines in your notes from Markdown
 
 ### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin) (Obsidian plugin)
 
@@ -14,6 +19,7 @@ AI-powered journaling plugin for your Obsidian notes, inspired by cognitive beha
 Get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
 
 ## Libraries
+
 ### [extract-md-data](https://www.npmjs.com/package/extract-md-data)
 
 `npm` library for building light-weight static site generators based on markdown files
@@ -22,7 +28,7 @@ Get etymology terms for words in your notes in one click, using data from [Onlin
 
 `npm` library for looking up English etymology in Node and the browser, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
 
-## Discord 
+## Discord
 
 ### [Discord Spam Blocker](https://github.com/clairefro/discord-spam-blocker)
 
@@ -37,7 +43,6 @@ Discord bot that allows servers to role-gate their channels and approve new memb
 ### [aimlazy](https://github.com/clairefro/aimlazy-demo)
 
 Productivity tool for prompting an LLM from the command line. Also can write files
-
 
 ## Chrome extensions
 
@@ -75,7 +80,7 @@ Entry in a four-hour hackathon. Make corny inspirational posters for your home o
 
 ### [The L Ships](https://github.com/clairefro/thelships)
 
-On-chain SVG NFT (ERC-721) that generates random unique pairs of TV show characters. Brand building concept. 
+On-chain SVG NFT (ERC-721) that generates random unique pairs of TV show characters. Brand building concept.
 
 ### [How much dough?](https://github.com/clairefro/how-much-dough)
 
