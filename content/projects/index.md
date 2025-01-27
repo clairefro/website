@@ -2,6 +2,10 @@
 
 ## Featured
 
+### [The Eggconomist](https://clairefro.github.io/the-eggconomist/) ([code](https://github.com/clairefro/the-eggconomist))
+
+Eggspert analysis on the US economy. Be the first to know if the egg price goes up or down.
+
 ### [Stack Overflow Simulator](https://sosimulator.xyz/) ([demo](https://x.com/clairefroe/status/1831773905343938889), [code](https://github.com/clairefro/sos-client))
 
 Relive the good old days of asking for help and being told to Read the F\*\*\*ing manual.
