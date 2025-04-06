@@ -114,12 +114,18 @@ const blogHtml = pug.renderFile(
   }
 );
 
+console.log('Building shiatsu redirect...');
+const shiatsuHtml = pug.renderFile(
+  path.resolve(__dirname, 'templates', 'pages', 'shiatsu.pug')
+);
+
 // Write non-blog-post files
 const notBlogPostsFilemap = {
   'index.html': homeHtml,
   'projects.html': projectsHtml,
   '404.html': notfoundHtml,
-  'blog/index.html': blogHtml
+  'blog/index.html': blogHtml,
+  'shiatsu.html': shiatsuHtml
 };
 
 console.log('Writing non-blog-post pages to dist dir...');
