@@ -1,5 +1,14 @@
 extends ../layouts/layout.pug
 
+block meta
+  meta(property='og:image', content='/assets/shiatsu.png')
+  meta(name='twitter:card', content='summary_large_image')
+  meta(
+    name='twitter:image',
+    content='https://clairefro.dev/assets/shiatsu.png'
+  )
+  meta(name='twitter:image:alt', content='Relaxing shiatsu in Brooklyn')
+
 block head
   link(rel='stylesheet', href='/styles/main.css')
   title Redirecting...
