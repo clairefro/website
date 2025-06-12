@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^1.19.1",
-    "dotenv": "^11.0.0",
     "extract-md-data": "^2.0.6",
     "fs-extra": "^10.0.0",
     "http-server": "^14.1.0",

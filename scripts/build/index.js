@@ -1,147 +1,93 @@
 const path = require('path');
 const fs = require('fs');
 const util = require('util');
-const pug = require('pug');
 const marked = require('marked');
 const extract = require('extract-md-data');
 const slugify = require('slugify');
 const config = require('../../config');
 const package = require('../../package.json');
-const { chopFm, validatePosts, humanizeDate, getExcerpt } = require('./utils');
+const { chopFm, validatePosts, getExcerpt } = require('./utils');
 const {
   mkdirIfNotExistsSync,
   copySync,
   clearDirSync
 } = require('../lib/files');
 const { genRssFeed } = require('./utils/genRssFeed');
+const { buildBlogPosts } = require('./utils/buildBlogPosts');
+const { buildNonBlogPages } = require('./utils/buildNonBlogPages');
+const pug = require('pug');
 
 console.log('Starting build...');
 
-const distDir = package.config.distDir;
-const contentDir = path.resolve(__dirname, '..', '..', config.contentDir);
-const staticDir = path.resolve(__dirname, '..', '..', config.staticDir);
+const dirs = {
+  dist: package.config.distDir,
+  content: path.resolve(__dirname, '..', '..', config.contentDir),
+  static: path.resolve(__dirname, '..', '..', config.staticDir),
+  templates: path.resolve(__dirname, 'templates')
+};
 
-const data = extract(contentDir, contentDir, { omitContent: true });
+// init build directory
+mkdirIfNotExistsSync(dirs.dist);
+clearDirSync(dirs.dist);
+mkdirIfNotExistsSync(path.resolve(dirs.dist, 'blog'));
+mkdirIfNotExistsSync(path.resolve(dirs.dist, 'blog/p'));
 
-// Build dirs
-console.log('Building blog dirs...');
-
-mkdirIfNotExistsSync(distDir);
-clearDirSync(distDir);
-// Build nested routes
-mkdirIfNotExistsSync(path.resolve(distDir, 'blog'));
-mkdirIfNotExistsSync(path.resolve(distDir, 'blog/p'));
-
-// Build homepage
-
-console.log('Building 404 page...');
-const notfoundHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', '404.pug')
-);
-
-console.log('Building home page...');
-const homeHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', 'home.pug')
-);
-
-console.log('Building projects page...');
-const projectsMarkdown = chopFm(
-  fs.readFileSync(path.resolve(contentDir, 'projects', 'index.md'), 'utf-8')
-);
-const projectsHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', 'projects.pug'),
-  {
-    markdown: projectsMarkdown,
-    marked
-  }
-);
-
-// Get all blog post paths
+// process blog posts
+const data = extract(dirs.content, dirs.content, { omitContent: true });
 const postsData = data.filter((d) => d.relativeDir.match(/^blog\//));
-
-// Check published date and title exists on all blog posts frontmatter
 validatePosts(postsData);
 
-const postsDataSorted = postsData.sort(
-  (a, b) => new Date(b.fm.published) - new Date(a.fm.published)
-);
+const processedPosts = postsData
+  .sort((a, b) => new Date(b.fm.published) - new Date(a.fm.published))
+  .map((p) => {
+    // First read and chop the content
+    const content = chopFm(
+      fs.readFileSync(path.resolve(dirs.content, p.relativePath), 'utf-8')
+    );
+    return {
+      ...p,
+      content,
+      slug: slugify(p.fm.title, { lower: true, strict: true }),
+      excerpt: getExcerpt(content)
+    };
+  });
 
-const processedPostsSorted = postsDataSorted.map((p) => {
-  const markdown = chopFm(
-    fs.readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
-  );
-
-  return {
-    ...p,
-    content: markdown,
-    slug: slugify(p.fm.title, { lower: true, strict: true }),
-    excerpt: getExcerpt(markdown)
-  };
+// build all pages
+const rssFeed = genRssFeed(processedPosts);
+const postPages = buildBlogPosts(processedPosts, {
+  distDir: dirs.dist,
+  templatesDir: dirs.templates,
+  marked
+});
+const nonBlogPages = buildNonBlogPages({
+  contentDir: dirs.content,
+  templatesDir: dirs.templates,
+  distDir: dirs.dist,
+  marked
 });
 
-console.log('Generating RSS feed...');
-const rssFeed = genRssFeed(processedPostsSorted);
-
-console.log(
-  `Building and writing ${processedPostsSorted.length} blog post pages...`
-);
-const postPages = processedPostsSorted.map((p) => {
-  const { content, excerpt, slug } = p;
-  const html = pug.renderFile(
-    path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
-    {
-      post: { ...p, fm: { ...p.fm, published: humanizeDate(p.fm.published) } },
-      marked,
-      markdown: content,
-      excerpt
-    }
-  );
-
-  const wwwLink = `/blog/p/${p.slug}`; // for intrasite linking
-  const outpath = `blog/p/${p.slug}.html`; // for dist Dir
-
-  // write page now to prevent storing tons of html blog pages in memory
-  fs.writeFileSync(path.resolve(distDir, outpath), html);
-
-  return {
-    slug,
-    wwwLink,
-    outpath,
-    title: p.fm.title,
-    published: humanizeDate(p.fm.published)
-  };
-});
-
-console.log('Building blog home page...');
-const blogHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', 'blog.pug'),
-  {
-    postPages
-  }
-);
-
-console.log('Building shiatsu redirect...');
-const shiatsuHtml = pug.renderFile(
-  path.resolve(__dirname, 'templates', 'pages', 'shiatsu.pug')
-);
-
-// Write non-blog-post files
-const notBlogPostsFilemap = {
-  'index.html': homeHtml,
-  'projects.html': projectsHtml,
-  '404.html': notfoundHtml,
-  'blog/index.html': blogHtml,
-  'shiatsu.html': shiatsuHtml,
+// write pages to disk
+const pagesToWrite = {
+  'index.html': nonBlogPages.home,
+  'projects.html': nonBlogPages.projects,
+  '404.html': nonBlogPages.notfound,
+  'blog/index.html': pug.renderFile(
+    path.resolve(dirs.templates, 'pages', 'blog.pug'),
+    { postPages }
+  ),
+  'shiatsu.html': nonBlogPages.shiatsu,
   'blog/feed.xml': rssFeed
 };
 
-console.log('Writing non-blog-post pages to dist dir...');
-Object.entries(notBlogPostsFilemap).forEach(([filename, html]) => {
-  fs.writeFileSync(path.resolve(distDir, filename), html);
-});
+console.log('Generating RSS feed...');
+fs.writeFileSync(path.resolve(dirs.dist, 'blog/feed.xml'), rssFeed);
+
+// copy static assets
+copySync(dirs.static, dirs.dist);
 
 const builtPages = [
-  ...Object.keys(notBlogPostsFilemap),
+  ...Object.keys(pagesToWrite),
+  'blog/feed.xml',
   ...postPages.map((p) => p.outpath)
 ];
 
@@ -150,6 +96,4 @@ console.log(
   util.inspect(builtPages, { maxArrayLength: 20 })
 );
 
-/** Copy over static files */
-copySync(staticDir, distDir);
 console.log('Done.');
