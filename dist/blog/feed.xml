@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>clairefro.dev blog</title>
+    <description>clairefro's tech diary</description>
+    <link>https://clairefro.dev/blog</link>
+    <atom:link href="https://clairefro.dev/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title><![CDATA[It]]></title>
+      <link>https://clairefro.dev/blog/p/it</link>
+      <guid>https://clairefro.dev/blog/p/it</guid>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Behind your eyes it's seeing
+
+Before your nose it's breathing
+
+Beneath your tongue it's tasting
+
+Beside your lips it's kissing
+
+Between your ears it's......]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[What I learned from accepting I suck at design]]></title>
+      <link>https://clairefro.dev/blog/p/what-i-learned-from-accepting-i-suck-at-design</link>
+      <guid>https://clairefro.dev/blog/p/what-i-learned-from-accepting-i-suck-at-design</guid>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 GMT</pubDate>
+      <description><![CDATA[Two weeks ago I launched this personal website with an air of pride that everything was built to be simple. You can read about it [here](/blog/p/look-......]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Look ma, no React! Why I recoded my portfolio site with vanilla everything]]></title>
+      <link>https://clairefro.dev/blog/p/look-ma-no-react-why-i-recoded-my-portfolio-site-with-vanilla-everything</link>
+      <guid>https://clairefro.dev/blog/p/look-ma-no-react-why-i-recoded-my-portfolio-site-with-vanilla-everything</guid>
+      <pubDate>Mon, 07 Feb 2022 00:00:00 GMT</pubDate>
+      <description><![CDATA[Welcome to my new site, brought to you by vanilla everything. No Javascript frameworks, CSS libraries or flashy animations. Just markdown, html templa......]]></description>
+    </item>
+  </channel>
+</rss>

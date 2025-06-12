@@ -13,6 +13,7 @@ const {
   copySync,
   clearDirSync
 } = require('../lib/files');
+const { genRssFeed } = require('./utils/genRssFeed');
 
 console.log('Starting build...');
 
@@ -65,34 +66,39 @@ const postsDataSorted = postsData.sort(
   (a, b) => new Date(b.fm.published) - new Date(a.fm.published)
 );
 
-console.log(
-  `Building and writing ${postsDataSorted.length} blog post pages...`
-);
-const postPages = postsDataSorted.map((p) => {
+const processedPostsSorted = postsDataSorted.map((p) => {
   const markdown = chopFm(
     fs.readFileSync(path.resolve(contentDir, p.relativePath), 'utf-8')
   );
 
-  const excerpt = getExcerpt(markdown);
-
-  const post = {
+  return {
     ...p,
-    fm: { ...p.fm, published: humanizeDate(p.fm.published) }
+    content: markdown,
+    slug: slugify(p.fm.title, { lower: true, strict: true }),
+    excerpt: getExcerpt(markdown)
   };
+});
 
+console.log('Generating RSS feed...');
+const rssFeed = genRssFeed(processedPostsSorted);
+
+console.log(
+  `Building and writing ${processedPostsSorted.length} blog post pages...`
+);
+const postPages = processedPostsSorted.map((p) => {
+  const { content, excerpt, slug } = p;
   const html = pug.renderFile(
     path.resolve(__dirname, 'templates', 'pages', 'post.pug'),
     {
-      post,
+      post: { ...p, fm: { ...p.fm, published: humanizeDate(p.fm.published) } },
       marked,
-      markdown,
+      markdown: content,
       excerpt
     }
   );
 
-  const slug = slugify(p.fm.title, { lower: true, strict: true });
-  const wwwLink = `/blog/p/${slug}`; // for intrasite linking
-  const outpath = `blog/p/${slug}.html`; // for dist Dir
+  const wwwLink = `/blog/p/${p.slug}`; // for intrasite linking
+  const outpath = `blog/p/${p.slug}.html`; // for dist Dir
 
   // write page now to prevent storing tons of html blog pages in memory
   fs.writeFileSync(path.resolve(distDir, outpath), html);
@@ -125,7 +131,8 @@ const notBlogPostsFilemap = {
   'projects.html': projectsHtml,
   '404.html': notfoundHtml,
   'blog/index.html': blogHtml,
-  'shiatsu.html': shiatsuHtml
+  'shiatsu.html': shiatsuHtml,
+  'blog/feed.xml': rssFeed
 };
 
 console.log('Writing non-blog-post pages to dist dir...');
