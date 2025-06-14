@@ -79,6 +79,16 @@ const pagesToWrite = {
   'blog/feed.xml': rssFeed
 };
 
+console.log('Building blog home page...');
+const blogHtml = pug.renderFile(
+  path.resolve(__dirname, 'templates', 'pages', 'blog.pug'),
+  {
+    postPages
+  }
+);
+fs.writeFileSync(path.resolve(dirs.dist, 'blog/index.html'), blogHtml);
+
+
 console.log('Generating RSS feed...');
 fs.writeFileSync(path.resolve(dirs.dist, 'blog/feed.xml'), rssFeed);
 
