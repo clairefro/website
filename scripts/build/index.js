@@ -88,12 +88,21 @@ const blogHtml = pug.renderFile(
 );
 fs.writeFileSync(path.resolve(dirs.dist, 'blog/index.html'), blogHtml);
 
-
 console.log('Generating RSS feed...');
 fs.writeFileSync(path.resolve(dirs.dist, 'blog/feed.xml'), rssFeed);
 
 // copy static assets
 copySync(dirs.static, dirs.dist);
+
+// create static "sidecar" page /shiatsu
+fs.copyFileSync(
+  path.resolve(__dirname, 'sidecar', 'shiatsu.html'),
+  path.resolve(dirs.dist, 'shiatsu.html')
+);
+fs.copyFileSync(
+  path.resolve(__dirname, 'sidecar', 'shiatsu.css'),
+  path.resolve(dirs.dist, 'styles', 'shiatsu.css')
+);
 
 const builtPages = [
   ...Object.keys(pagesToWrite),

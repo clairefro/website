@@ -22,10 +22,7 @@ function buildNonBlogPages({ contentDir, templatesDir, distDir, marked }) {
         marked
       }
     ),
-    '404.html': pug.renderFile(path.resolve(templatesDir, 'pages', '404.pug')),
-    'shiatsu.html': pug.renderFile(
-      path.resolve(templatesDir, 'pages', 'shiatsu.pug')
-    )
+    '404.html': pug.renderFile(path.resolve(templatesDir, 'pages', '404.pug'))
   };
 
   // write pages to disk
