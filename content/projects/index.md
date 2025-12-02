@@ -2,27 +2,35 @@
 
 ## Featured
 
-### [The Eggconomist](https://clairefro.github.io/the-eggconomist/) ([code](https://github.com/clairefro/the-eggconomist))
+### [Chronos Timeline Markdown Playground](https://clairefro.github.io/chronos-timeline-md/)
 
-Eggspert analysis on the US economy. Be the first to know if the egg price goes up or down.
+Render beautiful interactive timelines anywhere, from plain text
+
+### [Chronos Timeline (for Obsidian)](https://github.com/clairefro/obsidian-plugin-chronos)
+
+Obsidian plugin for rendering beautiful interactive timelines inline in your notes
 
 ### [Stack Overflow Simulator](https://sosimulator.xyz/) ([demo](https://x.com/clairefroe/status/1831773905343938889), [code](https://github.com/clairefro/sos-client))
 
 Relive the good old days of asking for help and being told to Read the F\*\*\*ing manual.
 
-### [Chronos Timeline](https://github.com/clairefro/obsidian-plugin-chronos) (Obsidian plugin)
-
-Render interactive timelines in your notes from Markdown
-
-### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin) (Obsidian plugin)
+### [ChatCBT (for Obsidian)](https://github.com/clairefro/obsidian-chat-cbt-plugin)
 
 AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.
 
-### [Etymology Lookup](https://github.com/clairefro/obsidian-plugin-etymology-lookup) (Obsidian plugin)
+### [Etymology Lookup (for Obsidian)](https://github.com/clairefro/obsidian-plugin-etymology-lookup)
 
-Get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
+Plugin to get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
+
+### [The Eggconomist](https://clairefro.github.io/the-eggconomist/) ([code](https://github.com/clairefro/the-eggconomist))
+
+Eggspert analysis on the US economy. Be the first to know if the egg price goes up or down.
 
 ## Libraries
+
+### [chronos-timeline-md](https://github.com/clairefro/chronos-timeline-md)
+
+markdown post processor library for rendering beautiful interactive timelines from plain text
 
 ### [extract-md-data](https://www.npmjs.com/package/extract-md-data)
 
@@ -43,6 +51,10 @@ Discord bot template that protects servers from typosquatting scam attacks
 Discord bot that allows servers to role-gate their channels and approve new members via a emoji votes on applications. Originally built for Chainforest DAO.
 
 ## CLI
+
+### [Advent of Code Easter Egg Sniffer](https://github.com/clairefro/aoc-meta-sniff)
+
+Fetch hidden easter egg `<span>` content from any year of AoC: `npm run sniff <yyyy>`
 
 ### [aimlazy](https://github.com/clairefro/aimlazy-demo)
 
