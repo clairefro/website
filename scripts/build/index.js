@@ -17,6 +17,23 @@ const { buildBlogPosts } = require('./utils/buildBlogPosts');
 const { buildNonBlogPages } = require('./utils/buildNonBlogPages');
 const pug = require('pug');
 
+// add server-side highlighting (highlight.js)
+const hljs = require('highlight.js');
+marked.setOptions({
+  highlight: (code, lang) => {
+    try {
+      if (lang && hljs.getLanguage(lang)) {
+        return hljs.highlight(code, { language: lang }).value;
+      }
+      return hljs.highlightAuto(code).value;
+    } catch (e) {
+      return code;
+    }
+  }
+});
+
+//------
+
 console.log('Starting build...');
 
 const dirs = {

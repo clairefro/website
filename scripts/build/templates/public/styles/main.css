@@ -139,8 +139,6 @@ img {
   border: 1px solid var(--color-text);
 }
 
-code,
-pre,
 blockquote {
   font-size: 0.9rem;
 }
@@ -149,11 +147,15 @@ code,
 pre {
   font-family: Andale Mono, monospace;
   border-radius: var(--border-radius);
-  padding: 0.25rem;
+  color: var(--color-primary);
+  background-color: var(--color-semi-transparent-dark);
+  padding: 0.25rem 0.35rem;
+  font-size: 0.8rem;
 }
 
 pre {
   overflow-x: auto;
+  padding: 0.25rem;
 }
 
 blockquote {
@@ -165,14 +167,19 @@ blockquote {
 }
 
 /* Code highlighting overrides */
-pre code.hljs {
-  background-color: transparent;
+pre code {
+  background-color: transparent !important;
 }
 
-code {
+pre:has(> code),
+pre:has(code) {
+  padding: 1em !important;
+}
+
+pre code {
+  padding: 0 !important;
   font-size: 0.8em;
-  color: var(--color-primary);
-  background-color: var(--color-semi-transparent-dark);
+  color: #444;
 }
 
 pre {

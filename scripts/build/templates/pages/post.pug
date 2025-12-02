@@ -2,7 +2,10 @@
 extends ../layouts/layout.pug
 
 block head
+  //- highlight.js styles
+  link(rel='stylesheet', href='/styles/highlight.css')
   link(rel='stylesheet', href='/styles/main.css')
+
   title #{ post.fm.title } | blog | clairefro
   meta(name='description', content=excerpt)
   meta(property='article:published_time', content=post.fm.published)
