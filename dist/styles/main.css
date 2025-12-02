@@ -315,21 +315,8 @@ hr {
   align-items: center;
 }
 
-#footer-right-row-2 #copyright-goes-here {
-  margin-right: 1rem;
-}
-
-#clicky-banner {
-  display: flex;
-  align-items: center;
-}
-
 #footer img {
   border: none;
-}
-
-#clicky-banner {
-  background-color: transparent;
 }
 
 #email-container {
