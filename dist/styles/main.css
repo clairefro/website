@@ -143,13 +143,6 @@ blockquote {
   font-size: 0.9rem;
 }
 
-/* code:not(pre code) {
-  color: var(--color-primary);
-  background-color: var(--color-semi-transparent-dark);
-  padding: 0.2rem 0.35rem;
-  border-radius: var(--border-radius);
-} */
-
 code,
 pre {
   font-family: Andale Mono, monospace;
