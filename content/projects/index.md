@@ -52,7 +52,7 @@ Discord bot that allows servers to role-gate their channels and approve new memb
 
 ## CLI
 
-### [Advent of Code Easter Egg Sniffer](https://github.com/clairefro/aoc-meta-sniff)
+### [Advent of Code Easter Egg Sniffer](https://github.com/clairefro/aoc-easter-egg-sniff)
 
 Fetch hidden easter egg `<span>` content from any year of AoC: `npm run sniff <yyyy>`
 
