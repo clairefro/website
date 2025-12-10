@@ -26,6 +26,10 @@ Plugin to get etymology terms for words in your notes in one click, using data f
 
 Eggspert analysis on the US economy. Be the first to know if the egg price goes up or down.
 
+### [Unofficial AoC 2025 Gifter](https://clairefro.github.io/aoc-gifter/)
+
+Generate digital merch Christmas cards for your friends, themed on Advent of Code 2025
+
 ## Libraries
 
 ### [chronos-timeline-md](https://github.com/clairefro/chronos-timeline-md)
