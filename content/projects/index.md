@@ -10,6 +10,10 @@ Render beautiful interactive timelines anywhere, from plain text
 
 Obsidian plugin for rendering beautiful interactive timelines inline in your notes
 
+### [Napkin Notes (for Obsidian)](https://github.com/clairefro/obsidian-plugin-napkin-notes)
+
+Obsidian plugin for turning handwritten notes, sketches, and whiteboard photos into inline interactive image carousels with optional annotations.
+
 ### [Stack Overflow Simulator](https://sosimulator.xyz/) ([demo](https://x.com/clairefroe/status/1831773905343938889), [code](https://github.com/clairefro/sos-client))
 
 Relive the good old days of asking for help and being told to Read the F\*\*\*ing manual.
