@@ -22,6 +22,10 @@ Relive the good old days of asking for help and being told to Read the F\*\*\*in
 
 AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.
 
+### [LLM of Babel](https://clairefro.github.io/llm-of-babel/)
+
+World first(?) maximum entropy LLM.
+
 ### [Etymology Lookup (for Obsidian)](https://github.com/clairefro/obsidian-plugin-etymology-lookup)
 
 Plugin to get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
