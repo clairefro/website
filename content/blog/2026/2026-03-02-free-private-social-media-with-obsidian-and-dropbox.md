@@ -130,7 +130,7 @@ Replace the `CAPITAL_VALUES` with your values.
 
 You can include password hints if you dare.
 
-Hopefully the sync automatically runs after you create and update this file. But just to be safe, run a manual sync by clicking the "Remote Sync" icon in the left ribbon
+Hopefully the sync automatically runs after you create and update this file. But just to be safe, run a manual sync by clicking the "Remotely Sync" icon in the left ribbon
 
 <img src="/assets/2025-02-26-manual-sync.png" alt="Remote sync - manual sync" />
 
@@ -178,7 +178,7 @@ file.mtime.relative()
 
 <img src="/assets/2025-02-26-modified.png" alt="Modified formula" />
 
-### Sort by "modified at"
+### Sort by "modified time"
 
 To float recent activity to the top, sort by "modified time" > "New to Old"
 
