@@ -12,7 +12,8 @@
     "build": "node scripts/build/index.js",
     "dev": "http-server $npm_package_config_distDir -o -p 1337",
     "dev:shiatsu": "npm run build && http-server $npm_package_config_distDir -o /shiatsu -p 1337",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "preview": "http-server dist -o -p 8080"
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^1.19.1",
