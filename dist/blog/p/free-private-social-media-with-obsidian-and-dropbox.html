@@ -100,7 +100,7 @@ My husband and I are separated by an ocean, opposite time zones, visa bureaucrac
 <span class="hljs-bullet">   4.</span> (optional if you want reallllly real-timeish) On remote changes &gt; every 1 min
 </code></pre>
 <p>You can include password hints if you dare.</p>
-<p>Hopefully the sync automatically runs after you create and update this file. But just to be safe, run a manual sync by clicking the &quot;Remote Sync&quot; icon in the left ribbon</p>
+<p>Hopefully the sync automatically runs after you create and update this file. But just to be safe, run a manual sync by clicking the &quot;Remotely Sync&quot; icon in the left ribbon</p>
 <img src="/assets/2025-02-26-manual-sync.png" alt="Remote sync - manual sync" />
 
 <h3 id="check-dropbox">Check Dropbox</h3>
@@ -120,7 +120,7 @@ My husband and I are separated by an ocean, opposite time zones, visa bureaucrac
 <li>Name the Base <code>_recent_activity</code></li>
 <li>Configure the Base as below</li>
 </ol>
-<h3 id="add-a-formula-property-called-added-by-properties-add-formula">Add a formula property called &quot;added by&quot; (&quot;Properties&quot;&gt; Add Formula)</h3>
+<h3 id="add-a-formula-property-called-added-by-properties--add-formula">Add a formula property called &quot;added by&quot; (Properties &gt; Add Formula)</h3>
 <p>Paste this formula, replacing the names to convert detected tags into display names. You can continue nesting any additional names you expect in the <code>if</code> statement.</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">if</span><span class="hljs-params">(file.tags.contains(<span class="hljs-string">&quot;jude&quot;</span>)</span></span>, <span class="hljs-string">&quot;Jude&quot;</span>, <span class="hljs-built_in">if</span>(file<span class="hljs-selector-class">.tags</span><span class="hljs-selector-class">.contains</span>(<span class="hljs-string">&quot;claire&quot;</span>), <span class="hljs-string">&quot;Claire&quot;</span>, <span class="hljs-string">&quot;&quot;</span>))
 </code></pre>
@@ -129,13 +129,13 @@ My husband and I are separated by an ocean, opposite time zones, visa bureaucrac
 <blockquote>
 <p>Note on formula validation: if you&#39;re new to Obsidian Bases formulas and not sure of the syntax, I recommend pasting the <a href="https://help.obsidian.md/formulas">docs</a> URL into an LLM and asking it how to achieve what you want to do.</p>
 </blockquote>
-<h3 id="add-a-formula-property-called-modified-properties-add-formula">Add a formula property called &quot;modified&quot; (&quot;Properties&quot;&gt; Add Formula)</h3>
+<h3 id="add-a-formula-property-called-modified-properties--add-formula">Add a formula property called &quot;modified&quot; (Properties &gt; Add Formula)</h3>
 <p>Make a human-readable modified at column. Use Obsidian&#39;s native <code>.relative()</code> method</p>
 <pre><code><span class="hljs-built_in">file</span>.mtime.<span class="hljs-built_in">relative</span>()
 </code></pre>
 <img src="/assets/2025-02-26-modified.png" alt="Modified formula" />
 
-<h3 id="sort-by-modified-at">Sort by &quot;modified at&quot;</h3>
+<h3 id="sort-by-modified-time">Sort by &quot;modified time&quot;</h3>
 <p>To float recent activity to the top, sort by &quot;modified time&quot; &gt; &quot;New to Old&quot;</p>
 <img src="/assets/2025-02-26-sort-by-modified.png" alt="Sort by modified time" />
 

@@ -156,7 +156,7 @@ The idea is someone can make a new note, tag it with their name like `#claire`, 
 2. Name the Base `_recent_activity`
 3. Configure the Base as below
 
-### Add a formula property called "added by" ("Properties"> Add Formula)
+### Add a formula property called "added by" (Properties > Add Formula)
 
 Paste this formula, replacing the names to convert detected tags into display names. You can continue nesting any additional names you expect in the `if` statement.
 
@@ -168,7 +168,7 @@ if(file.tags.contains("jude"), "Jude", if(file.tags.contains("claire"), "Claire"
 
 > Note on formula validation: if you're new to Obsidian Bases formulas and not sure of the syntax, I recommend pasting the [docs](https://help.obsidian.md/formulas) URL into an LLM and asking it how to achieve what you want to do.
 
-### Add a formula property called "modified" ("Properties"> Add Formula)
+### Add a formula property called "modified" (Properties > Add Formula)
 
 Make a human-readable modified at column. Use Obsidian's native `.relative()` method
 
