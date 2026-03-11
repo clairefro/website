@@ -196,7 +196,7 @@ Invite your friends to join your shared vault by privately sharing the connectio
 
 ## 7. (Optional) Create backups
 
-If you'd like, create automated local backups (unencrypted) of your shared Vault. I recommend the Obsidian plugin [Local Backup](https://obsidian.md/plugins?search=local%20backup).
+If you'd like, automate local backups (unencrypted) of your shared Vault. I recommend the Obsidian plugin [Local Backup](https://obsidian.md/plugins?search=local%20backup).
 
 This is especially useful in case everyone forgets the encryption password and gets locked out of your precious space. It also enables you to migrate from Dropbox anytime.
 
