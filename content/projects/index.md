@@ -1,34 +1,40 @@
 # Projects
 
+## Obsidian plugins
+
+### [Chronos Timeline](https://github.com/clairefro/obsidian-plugin-chronos)
+
+Obsidian plugin for rendering beautiful interactive timelines inline in your notes
+
+### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin)
+
+AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.
+
+### [Napkin Notes](https://github.com/clairefro/obsidian-plugin-napkin-notes)
+
+Obsidian plugin for turning handwritten notes, sketches, and whiteboard photos into inline interactive image carousels with optional annotations.
+
+### [Etymology Lookup](https://github.com/clairefro/obsidian-plugin-etymology-lookup)
+
+Plugin to get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
+
+### [Image Dither](https://github.com/clairefro/obsidian-plugin-image-dither)
+
+Intercepts images pasted or dropped into notes so you can aestehtically dither and resize them, saving storage space
+
 ## Featured
 
 ### [Chronos Timeline Markdown Playground](https://clairefro.github.io/chronos-timeline-md/)
 
 Render beautiful interactive timelines anywhere, from plain text
 
-### [Chronos Timeline (for Obsidian)](https://github.com/clairefro/obsidian-plugin-chronos)
-
-Obsidian plugin for rendering beautiful interactive timelines inline in your notes
-
-### [Napkin Notes (for Obsidian)](https://github.com/clairefro/obsidian-plugin-napkin-notes)
-
-Obsidian plugin for turning handwritten notes, sketches, and whiteboard photos into inline interactive image carousels with optional annotations.
-
 ### [Stack Overflow Simulator](https://sosimulator.xyz/) ([demo](https://x.com/clairefroe/status/1831773905343938889), [code](https://github.com/clairefro/sos-client))
 
 Relive the good old days of asking for help and being told to Read the F\*\*\*ing manual.
 
-### [ChatCBT (for Obsidian)](https://github.com/clairefro/obsidian-chat-cbt-plugin)
-
-AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.
-
 ### [LLM of Babel](https://clairefro.github.io/llm-of-babel/)
 
 World first(?) maximum entropy LLM.
-
-### [Etymology Lookup (for Obsidian)](https://github.com/clairefro/obsidian-plugin-etymology-lookup)
-
-Plugin to get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
 
 ### [The Eggconomist](https://clairefro.github.io/the-eggconomist/) ([code](https://github.com/clairefro/the-eggconomist))
 
