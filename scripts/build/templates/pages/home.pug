@@ -16,18 +16,17 @@ block head
   meta(property='og:title', content='clairefro')
 
 block content
+  img.avatar(
+    src='/assets/me.png',
+    alt='Blurred portrait of Claire Froelich with a bird sitting on hand',
+    style='display: block; margin: 0 auto; max-width: 166px'
+  )
   #greeter
     .textbox
       h1 Claire Froelich
-      p This is my public tech diary. Here you'll find some of my side projects and curiosities.
-    img.avatar(
-      src='/assets/me.png',
-      alt='Blurred portrait of Claire Froelich with a bird sitting on hand'
-    )
 
   div
     :markdown-it
-      ## About
       I'm a self-taught tinkerer with a background in linguistics and interpreting. I believe language and technology can help us get over language and technology.
 
       Borges is my muse, and Jonathan Basile's [digital Library of Babel](https://libraryofbabel.info/) is my favorite corner of the world wide web.
