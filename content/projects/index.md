@@ -4,23 +4,23 @@
 
 ### [Chronos Timeline](https://github.com/clairefro/obsidian-plugin-chronos)
 
-Obsidian plugin for rendering beautiful interactive timelines inline in your notes
+Render beautiful interactive timelines inline in your notes with plain markdown
 
 ### [ChatCBT](https://github.com/clairefro/obsidian-chat-cbt-plugin)
 
-AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy.
+AI-powered journaling plugin for your Obsidian notes, inspired by cognitive behavioral therapy
 
 ### [Napkin Notes](https://github.com/clairefro/obsidian-plugin-napkin-notes)
 
-Turn handwritten notes, sketches, and whiteboard photos into inline image carousels with searchable annotations.
+Turn handwritten notes, sketches, and whiteboard photos into inline image carousels with searchable annotations
 
 ### [Etymology Lookup](https://github.com/clairefro/obsidian-plugin-etymology-lookup)
 
-Plugin to get etymology terms for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
+Get etymology for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
 
 ### [Image Dither](https://github.com/clairefro/obsidian-plugin-image-dither)
 
-Intercepts images pasted or dropped into notes so you can aestehtically dither and resize them, saving storage space
+Intercepts images pasted or dropped into notes so you can aesthetically dither and resize them, saving storage space
 
 ## Featured
 
