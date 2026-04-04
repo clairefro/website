@@ -12,7 +12,7 @@ AI-powered journaling plugin for your Obsidian notes, inspired by cognitive beha
 
 ### [Napkin Notes](https://github.com/clairefro/obsidian-plugin-napkin-notes)
 
-Obsidian plugin for turning handwritten notes, sketches, and whiteboard photos into inline interactive image carousels with optional annotations.
+Turn handwritten notes, sketches, and whiteboard photos into inline image carousels with searchable annotations.
 
 ### [Etymology Lookup](https://github.com/clairefro/obsidian-plugin-etymology-lookup)
 
