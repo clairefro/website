@@ -16,7 +16,7 @@ Turn handwritten notes, sketches, and whiteboard photos into inline image carous
 
 ### [Etymology Lookup](https://github.com/clairefro/obsidian-plugin-etymology-lookup)
 
-Get etymology for words in your notes in one click, using data from [Online Etymology Dictionary](https://www.etymonline.com/)
+Etymology for words in your notes with one click, leveraging [Online Etymology Dictionary](https://www.etymonline.com/)
 
 ### [Image Dither](https://github.com/clairefro/obsidian-plugin-image-dither)
 
@@ -34,7 +34,7 @@ Relive the good old days of asking for help and being told to Read the F\*\*\*in
 
 ### [LLM of Babel](https://clairefro.github.io/llm-of-babel/)
 
-World first(?) maximum entropy LLM.
+World's first(?) maximum entropy LLM.
 
 ### [The Eggconomist](https://clairefro.github.io/the-eggconomist/) ([code](https://github.com/clairefro/the-eggconomist))
 
