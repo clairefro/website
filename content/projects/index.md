@@ -140,6 +140,8 @@ A plugin that works around the limitations of a pre-fabbed e-commerce site to gi
 
 ## Tutorials
 
+### [Free, private social media with Obsidian and Dropbox](https://clairefro.dev/blog/p/free-private-social-media-with-obsidian-and-dropbox)
+
 ### [Make a CLI tool with Node and OpenAI to boost your productivity](https://www.youtube.com/watch?v=nUnKos5xzOM)
 
 ### [Automate daily Tweets with Postman and the Twitter API v2](https://dev.to/clairefro/automate-daily-tweets-with-postman-and-the-twitter-api-v2-4gg9)
